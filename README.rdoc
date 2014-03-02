@@ -2,9 +2,10 @@
 The rails backend. It may get too bulky moving both around, especially if commits get moved around. 
 
 Master contains last stable version.
-Development is untested or unready. Please do not merge with master without consensus.
 
-Do not push unstable builds. Do not work on the develop branch, please branch off changes and merge into dev.
+Development contains new features. Please do not merge with master without consensus.
+
+Do not push unstable builds. Do not work on the develop branch, branch changes and merge into dev.
 
 The server is up and running in Heroku. Credentials and URL are posted in the "Notes" document within the Google Drive folder "Glassroom." Since this is now its own repository, it will be pushed directly to Heroku 
 
