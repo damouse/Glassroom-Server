@@ -5,14 +5,14 @@ The server is up and running in Heroku. Credentials and URL are posted in the "N
 
 ==Instructions on Pushing to Heroku
 - install heroku
-- $ heroku login
+- <tt>$ heroku login</tt>
 - Use "mickey.barboi@gmail.com" and "glassroom1"
-- $ git remote -v    				to check for presence of remotes (not sure if they transfer with the repo)
-- $ git remote add heroku git@heroku.com:shrouded-brushlands-8184.git
-- $ git push heroku master     	   takes a while
-- <tt>$ heroku run rake db:migrate</tt> (only if you've made changes to database)
+- <tt>$ git remote -v</tt> to check for presence of remotes (not sure if they transfer with the repo)
+- <tt>$ git remote add heroku git@heroku.com:shrouded-brushlands-8184.git
+- <tt>$ git push heroku master</tt> takes a while
+- <tt>$ heroku run rake db:migrate</tt>  if you've made changes to database, i.e. created any migrations
 
-Run $ heroku
+Run <tt>$ heroku logs</tt> to see the rails output of the site.
 
 Note: if you've changed items in the asset pipeline (anything in app/assets; js, css, or images) you may need to precompile the assets. Look up the command. 
 

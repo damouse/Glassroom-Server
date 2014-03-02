@@ -3,10 +3,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-gem "therubyracer"
+#UI Gems
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
+
+#Authorization/Authentication
 gem 'bcrypt-ruby', '3.1.2'
 
 group :production do
@@ -14,9 +16,15 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-group :development do
+group :development, :test do
 # Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
+	gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
+group :test do
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.1.0'
 end
 
 # Use SCSS for stylesheets
@@ -31,8 +39,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
+# Use jquery as the JavaScript library-- are these redundant?
 gem 'jquery-rails'
+gem "therubyracer"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
