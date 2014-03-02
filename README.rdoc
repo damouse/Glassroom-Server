@@ -1,4 +1,14 @@
 == Glassroom Server
 The rails backend. It may get too bulky moving both around, especially if commits get moved around. Do not push unstable builds. Do not work on the master branch. Make changes in branches, merge frequently. 
 
-The server is up and running in Heroku. Credentials and URL are posted in the "Notes" document within the Google Drive folder "Glassroom." Since this is now its own repository, it will be pushed directly to Heroku (instructions to follow).
+The server is up and running in Heroku. Credentials and URL are posted in the "Notes" document within the Google Drive folder "Glassroom." Since this is now its own repository, it will be pushed directly to Heroku 
+
+=Instructions on Pushing to Heroku
+- install heroku
+- $ heroku login
+- Use "mickey.barboi@gmail.com" and "glassroom1"
+- $ git remote -v    to check for presence of remotes (not sure if they transfer with the repo)
+- $ git remote add heroku git@heroku.com:shrouded-brushlands-8184.git
+- $ git push heroku master     	
+- $ heroku run rake db:migrate     (only if you've made changes to database)
+
