@@ -8,6 +8,49 @@ GlassroomProto::Application.routes.draw do
   match '/dashboard',   to: 'static#dashboard',   via: 'get'
   match '/bootstrapExamples',   to: 'static#bsexamples',   via: 'get'
   
+
+  ##The following is API documentation code. It has nothing to do with routes other than 
+  #exposing them to api_taster
+  mount ApiTaster::Engine => "/api_taster" if Rails.env.development?
+  if Rails.env.development?
+    ApiTaster.routes do
+
+      get '/', {}
+
+      desc 'Get a __list__ of subjects'
+      get '/subjects.json'
+
+      post '/subjects', {}
+
+      get '/subjects/new', {}
+
+      desc 'Edit an existing subject'
+      get '/subjects/:id/edit', {
+        id:1
+      }
+
+      get '/subjects/:id', {}
+
+      patch '/subjects/:id', {}
+
+      put '/subjects/:id', {id:1}
+
+      delete '/subjects/:id', {}
+
+      get '/dashboard', {}
+
+      get '/bootstrapExamples', {}
+
+      get '/rails/info/properties', {}
+
+      get '/rails/info/routes', {}
+
+      get '/rails/info', {}
+    end
+  end
+
+
+
   #get "static_pages/about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
