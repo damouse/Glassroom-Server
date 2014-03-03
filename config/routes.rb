@@ -18,7 +18,7 @@ GlassroomProto::Application.routes.draw do
       get '/', {}
 
       desc 'Get a __list__ of subjects'
-      get '/subjects.json'
+      get '/subjects'
 
       post '/subjects', {}
 
