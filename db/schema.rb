@@ -11,7 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225075624) do
+ActiveRecord::Schema.define(version: 20140310043304) do
+
+  create_table "audios", force: true do |t|
+    t.date     "created_on"
+    t.integer  "lecture_id"
+    t.string   "uri"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "audios", ["lecture_id"], name: "index_audios_on_lecture_id"
+
+  create_table "lectures", force: true do |t|
+    t.string   "name"
+    t.string   "icon"
+    t.date     "created_on"
+    t.date     "last_updated"
+    t.integer  "subject_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lectures", ["subject_id"], name: "index_lectures_on_subject_id"
+
+  create_table "notes", force: true do |t|
+    t.date     "created_on"
+    t.integer  "lecture_id"
+    t.string   "uri"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notes", ["lecture_id"], name: "index_notes_on_lecture_id"
 
   create_table "subjects", force: true do |t|
     t.string   "name"
@@ -20,5 +52,15 @@ ActiveRecord::Schema.define(version: 20140225075624) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "videos", force: true do |t|
+    t.date     "created_on"
+    t.integer  "lecture_id"
+    t.string   "uri"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "videos", ["lecture_id"], name: "index_videos_on_lecture_id"
 
 end
