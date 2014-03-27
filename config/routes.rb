@@ -1,5 +1,7 @@
 GlassroomProto::Application.routes.draw do
   
+  get "lectures/lectures"
+  get "lectures/lecture_viewer"
   devise_for :users
 
   root  'landing#home'
