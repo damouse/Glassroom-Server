@@ -20,6 +20,7 @@
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
+        <td><%= link_to lecture.id, "/lectures/#{lecture.id}" %></td>
         <td><%= lecture.name %></td>
         <td><%= lecture.created_at %></td>
       </tr>
