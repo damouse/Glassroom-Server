@@ -17,15 +17,29 @@
 <hr>
 <h3>Lectures</h3>
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
-        <td><%= link_to lecture.id, "/lectures/#{lecture.id}" %></td>
+        <td><%= link_to lecture.id, subject_lecture_path(@subject.id, lecture.id) %></td>
         <td><%= lecture.name %></td>
         <td><%= lecture.created_at %></td>
+        <td>
+          <%= link_to 'View', subject_lecture_path(@subject.id, lecture.id), :class => 'btn btn-mini btn-success' %>
+          <%= link_to 'Delete', '#', :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
+</table>
 
 <hr>
 
