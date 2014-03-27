@@ -3,10 +3,9 @@ GlassroomProto::Application.routes.draw do
 
   root  'landing#home'
 
-  resources :subjects do
-    match '/lectures/:id', to: 'lectures#lecture_viewer', via: 'get'
-  end
+  resources :subjects 
 
+  match '/lectures/:id', to: 'lectures#lecture_viewer', via: 'get'
   match '/dashboard',   to: 'static#dashboard',   via: 'get'
   match '/bootstrapExamples',   to: 'static#bsexamples',   via: 'get'
   
