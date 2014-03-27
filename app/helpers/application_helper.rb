@@ -10,4 +10,8 @@ module ApplicationHelper
     #   subject.user_id.include? id
     # end
   end
+
+  def getSubjectUrl subject
+    url = subject_url(subject)
+  end
 end

@@ -78,7 +78,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Subjects <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <% getUserSubjects.each do |subject| %>
-                <li><a href="#"><%= subject.name %></a></li>
+                <li><a href="<%= getSubjectUrl(subject) %>"><%= subject.name %></a></li>
                 <% end %>
               </ul>
             </li>
