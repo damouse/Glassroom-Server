@@ -1,8 +1,13 @@
 module ApplicationHelper
   def getUserSubjects
-    @subjects = Subjects.all
-    @user_subjects = @subjects.select do |subject|
-      subject.user_id.include? current_user.id
-    end
+    @subjects = Subject.all
+    # @user_subjects = @subjects.select do |subject|
+    #   if current_user.id == nil # Had to add this because authentication is not currently working
+    #     id = 2
+    #   else 
+    #     id = current_user.id
+    #   end
+    #   subject.user_id.include? id
+    # end
   end
 end
