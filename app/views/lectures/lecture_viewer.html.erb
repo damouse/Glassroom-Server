@@ -1,2 +1,14 @@
-<h1>Lectures#lecture_viewer</h1>
-<p>Find me in app/views/lectures/lecture_viewer.html.erb</p>
+<h1>Lecture: <%= @lecture.name%></h1>
+<p>Work in Progress. Please note that content below represents the stored media for this lecture, but is horribly static. All this content will be avaliable dynamically.</p>
+
+<h3>Notes:</h3>
+<%= render '/lectures/media_placeholder', :media => @notes %>
+
+<h3>Audio:</h3>
+<%= render '/lectures/media_placeholder', :media => @audio %>
+
+<h3>Video:</h3>
+<%= render '/lectures/media_placeholder', :media => @video %>
+
+<h3>Images:</h3>
+<%= render '/lectures/media_placeholder', :media => @images %>
