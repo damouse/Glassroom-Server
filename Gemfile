@@ -31,7 +31,6 @@ end
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails', '~> 3.0.0.beta'
-	gem 'api_taster'
 end
 
 group :test do
