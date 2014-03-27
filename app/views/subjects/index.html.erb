@@ -17,6 +17,7 @@
   <tbody>
     <% @subjects.each do |subject| %>
       <tr>
+        <td><%= link_to subject.id, subject_path(subject) %></td>
         <td><%= subject.name %></td>
         <td><%= subject.description %></td>
         <td><%= subject.image %></td>

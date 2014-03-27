@@ -20,7 +20,6 @@
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
-        <td><%= link_to subject_lecture_path(@subject, lecture) %></td>
         <td><%= lecture.name %></td>
         <td><%= lecture.created_at %></td>
       </tr>
