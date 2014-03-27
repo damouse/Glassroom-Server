@@ -1,14 +1,16 @@
 GlassroomProto::Application.routes.draw do
+  devise_for :users
+
   root  'landing#home'
 
-  resources :subjects
-  resources :users
+  resources :subjects do
+    match '/lectures/:id', to: 'lectures#lecture_viewer', via: 'get', as: 'lecture'
+  end
 
   match '/dashboard',   to: 'static#dashboard',   via: 'get'
   match '/bootstrapExamples',   to: 'static#bsexamples',   via: 'get'
-
-  match '/signup',   to: 'users#new',   via: 'get'
   
+
   #get "static_pages/about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
