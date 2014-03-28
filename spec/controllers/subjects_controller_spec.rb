@@ -13,13 +13,13 @@ describe SubjectsController do
     end
   end
 
-  describe "GET show" do
-    it "assigns @lectures as the list of lectures that belongs to @subject" do
-      subject = Subject.create! valid_attributes
-      get :lecture, {}, valid_session
-      expect(assigns(:lectures)).to eq(subject.lectures)
-    end
-  end
+  # describe "GET show" do
+  #   it "assigns @lectures as the list of lectures that belongs to @subject" do
+  #     subject = Subject.create! valid_attributes
+  #     get :lecture, {}, valid_session
+  #     expect(assigns(:lectures)).to eq(subject.lectures)
+  #   end
+  # end
 
   describe "GET new" do
     it "assigns a new subject as @subject" do
