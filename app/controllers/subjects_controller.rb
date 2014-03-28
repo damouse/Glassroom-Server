@@ -1,4 +1,5 @@
 class SubjectsController < ApplicationController
+  
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
   # GET /subjects
@@ -10,6 +11,7 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @lectures = @subject.lectures
   end
 
   # GET /subjects/new
