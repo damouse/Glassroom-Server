@@ -2,9 +2,8 @@ module ApplicationHelper
   def getUserSubjects
     @subjects = Subject.all
     # @user_subjects = @subjects.select do |subject|
-    #   if current_user.id == nil # Had to add this because authentication is not currently working
-    #     id = 2
-    #   else 
+    #   id = 2
+    #   if current_user.id != nil # Had to add this because authentication is not currently working
     #     id = current_user.id
     #   end
     #   subject.user_id.include? id
