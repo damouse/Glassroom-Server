@@ -1,4 +1,5 @@
 class Lecture < ActiveRecord::Base
+  validates :name, presence: true
 	belongs_to :subject
 	has_many :notes
 	has_many :audios
