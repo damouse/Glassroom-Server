@@ -1,3 +1,19 @@
+Directions for checking out code
+********************************
+git clone https://github.com/damouse/Glassroom-Server.git #clone github repo
+cd Glassroom-Server                   # switch to repo directory
+git pull origin 20140327_iteration_1  # pulling the code for iteration one
+
+
+Directions for running app on local (Assumes ruby on rails is installed and in Glassroom-Server directory)
+***********************************
+bundle install  # installs the gems we are using
+rails server    # starts the rails server located at localhost:3000
+Go to localhost:3000
+
+App is also accessible on Heroku at http://glassroom.herokuapp.com/
+
+
 = Glassroom Server
 The rails backend. It may get too bulky moving both around, especially if commits get moved around. 
 
