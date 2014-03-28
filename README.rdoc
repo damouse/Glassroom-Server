@@ -20,6 +20,8 @@ Go to localhost:3000
 App is also accessible on Heroku at http://glassroom.herokuapp.com/
 
 
+In order to run tests, run: rspec spec/
+
 = Glassroom Server
 The rails backend. It may get too bulky moving both around, especially if commits get moved around. 
 
