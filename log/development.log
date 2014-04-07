@@ -3991,3 +3991,37 @@ ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/
   Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (14.4ms)
   Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.2ms)
   Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (132.7ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (39.9ms)[0m  INSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 07 Apr 2014 18:48:13 UTC +00:00], ["lecture_id", 1], ["name", "Random Acts of Kindness"], ["order", 1], ["updated_at", Mon, 07 Apr 2014 18:48:13 UTC +00:00], ["url", "http://www.daytodaydreams.com/1/post/2013/07/random-acts-of-kindness1.html"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 07 Apr 2014 18:50:46 UTC +00:00], ["lecture_id", 1], ["name", "Spongebob"], ["order", 2], ["updated_at", Mon, 07 Apr 2014 18:50:46 UTC +00:00], ["url", "http://www.fanpop.com/clubs/bored/images/4352530/title/random-spongebob-wallpaper"]]
+  [1m[35m (5052.4ms)[0m  commit transaction
+SQLite3::BusyException: database is locked: commit transaction
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "images" SET "url" = ?, "updated_at" = ? WHERE "images"."id" = 3[0m  [["url", "http://spongebob.wikia.com/wiki/File:SpongeBob_SquarePants_Smiling_-_Artwork.png"], ["updated_at", Mon, 07 Apr 2014 18:53:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (28.7ms)[0m  INSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 07 Apr 2014 18:55:44 UTC +00:00], ["lecture_id", 1], ["name", "Spongebob"], ["order", 2], ["updated_at", Mon, 07 Apr 2014 18:55:44 UTC +00:00], ["url", "http://spongebob.wikia.com/wiki/File:SpongeBob_SquarePants_Smiling_-_Artwork.png"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 07 Apr 2014 18:57:42 UTC +00:00], ["lecture_id", 1], ["name", "HoneyCrisp Apple"], ["order", 3], ["updated_at", Mon, 07 Apr 2014 18:57:42 UTC +00:00], ["url", "http://en.wikipedia.org/wiki/Honeycrisp"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 07 Apr 2014 18:58:50 UTC +00:00], ["lecture_id", 1], ["name", "Lets Move"], ["order", 4], ["updated_at", Mon, 07 Apr 2014 18:58:50 UTC +00:00], ["url", "http://www.imls.gov/about/letsmove_branding.aspx"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 07 Apr 2014 19:00:11 UTC +00:00], ["lecture_id", 1], ["name", "Not a Lion"], ["order", 4], ["updated_at", Mon, 07 Apr 2014 19:00:11 UTC +00:00], ["url", "http://www.zwani.com/graphics/hello/"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 07 Apr 2014 19:03:00 UTC +00:00], ["lecture_id", 2], ["name", "Fire Lion"], ["order", 1], ["updated_at", Mon, 07 Apr 2014 19:03:00 UTC +00:00], ["url", "http://starsteeds.blogspot.com/2012/12/the-fire-lion.html"]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 07 Apr 2014 19:03:59 UTC +00:00], ["lecture_id", 2], ["name", "Drop"], ["order", 1], ["updated_at", Mon, 07 Apr 2014 19:03:59 UTC +00:00], ["url", "http://www.volusia.org/services/public-works/water-resources-and-utilities/"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "images" ("created_at", "lecture_id", "name", "order", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 07 Apr 2014 19:07:21 UTC +00:00], ["lecture_id", 2], ["name", "Earth"], ["order", 2], ["updated_at", Mon, 07 Apr 2014 19:07:21 UTC +00:00], ["url", "http://blog.runningwarehouse.com/wp-content/uploads/2013/11/mud02.jpg"]]
+  [1m[36m (23.4ms)[0m  [1mcommit transaction[0m
