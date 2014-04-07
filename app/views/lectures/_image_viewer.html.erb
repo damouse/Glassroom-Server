@@ -1,0 +1,17 @@
+<div class='image-wrapper'>
+	<ul class='lecture-img'>
+		<% media.each do |element| %>
+      	<li>
+        	<div> 
+        	<% if element.attributes['url'] %>
+           	 <%= image_tag element.url %>
+        	<% end %> 
+    		</div>
+        	<div><%= element.name %></div>
+        	<div><%= element.created_at %></div>
+
+        	<div> <%= link_to 'Delete', '#', :class => 'btn btn-mini btn-danger' %> </div>
+      	</li>
+	<% end %>
+	</ul>
+</div>
