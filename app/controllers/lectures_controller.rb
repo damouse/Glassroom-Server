@@ -2,7 +2,7 @@ class LecturesController < ApplicationController
   def lecture_viewer
   	@lecture = Lecture.find(params[:id])
   	@notes = @lecture.notes
-  	@images = @lecture.images
+  	@images = (@lecture.images).order(:order)
   	@audio = @lecture.audios
   	@video = @lecture.videos
   end
