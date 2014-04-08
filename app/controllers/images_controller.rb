@@ -3,6 +3,8 @@ class ImagesController < ApplicationController
   end
 
   def change_order
+    render :text=>params[:id]
+    return
   end
 
   def sort_order
