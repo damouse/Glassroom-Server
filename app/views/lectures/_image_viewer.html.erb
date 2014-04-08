@@ -1,20 +1,28 @@
  
-
 <div class='image-wrapper'>
 	<ul class='lecture-img' id='lecture-img-sortable'>
-		<% media.each do |element| %>
-      	<li>
-        	<div> 
-        	<% if element.attributes['url'] %>
-           	 <%= image_tag element.url %>
-        	<% end %> 
-    		</div>
-        	<div><%= element.name %></div>
-        	<div><%= element.created_at %></div>
-        	<div>Order: <%= element.order %></div>
+<button id='change-img-order'>Update</button>
 
-        	<div> <%= link_to 'Delete', '#', :class => 'btn btn-mini btn-danger' %> </div>
-      	</li>
-	<% end %>
-	</ul>
+		<% media.each do |element| %>
+   <li id=<%=element.id %>>
+    <%= simple_form_for element, :html => { :class => 'form-horizontal' } do |f| %>
+    <div> 
+     <% if element.attributes['url'] %>
+     <%= image_tag element.url %>
+     <% end %> 
+   </div>
+   <div><%= element.name %></div>
+   <div><%= element.created_at %></div>
+   <div>Order: <%= element.order %></div>
+   <%= f.input :id %>
+   <%= f.input :order %>
+   <!--div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+  </div-->
+  <div> <%= link_to 'Delete', '#', :class => 'btn btn-mini btn-danger' %> </div>
+  <% end %>
+</li>
+<% end %>
+</ul>
+
 </div>
