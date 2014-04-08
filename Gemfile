@@ -9,7 +9,7 @@ gem 'simple_form'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-
+#gem 'jquery-ui-rails', '~> 4.2.0'
 #Authorization/Authentication
 gem 'bcrypt-ruby', '3.1.2'
 gem 'devise'
