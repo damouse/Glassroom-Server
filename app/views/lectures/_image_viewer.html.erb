@@ -12,13 +12,13 @@
      <% end %> 
    </div>
    <div><%= element.name %></div>
+   <div>Id: <%= element.id %></div>
    <div><%= element.created_at %></div>
    <div>Order: <%= element.order %></div>
-   <%= f.input :id %>
-   <%= f.input :order %>
-   <!--div class="form-actions">
+   <%= f.input :name %>
+   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
-  </div-->
+  </div>
   <div> <%= link_to 'Delete', '#', :class => 'btn btn-mini btn-danger' %> </div>
   <% end %>
 </li>
