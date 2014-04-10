@@ -1,16 +1,11 @@
 GlassroomProto::Application.routes.draw do
-  resources :images
-
-  get "images/edit"
+  #resources :images
   get "images/change_order"
+  get "images/edit"
+  
   get "images/sort_order"
   get "images/update"
   get "images/delete"
-  get "image/edit"
-  get "image/change_order"
-  get "image/sort_order"
-  get "image/update"
-  get "image/delete"
   devise_for :users
 
   root  'landing#home'
