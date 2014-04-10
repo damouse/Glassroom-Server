@@ -1,5 +1,4 @@
 require 'spec_helper'
-
 describe ImagesController do
 
   describe "GET 'edit'" do

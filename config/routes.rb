@@ -1,4 +1,6 @@
 GlassroomProto::Application.routes.draw do
+  resources :images
+
   get "images/edit"
   get "images/change_order"
   get "images/sort_order"

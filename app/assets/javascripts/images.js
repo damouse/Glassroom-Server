@@ -1,5 +1,4 @@
 //= require jquery-ui
-
   $(function() {
     $( "#lecture-img-sortable" ).sortable({
     	update: function (event, ui) {
