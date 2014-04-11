@@ -1,3 +1,26 @@
+Directions for checking out code
+
+<tt>git clone https://github.com/damouse/Glassroom-Server.git</tt>  #clone github repo
+
+<tt>cd Glassroom-Server</tt>           # switch to repo directory
+
+<tt>git pull origin master</tt>  # pulling the code for iteration two
+
+Directions for running app on local (Assumes ruby on rails is installed and in Glassroom-Server directory)
+
+<tt>bundle update</tt>
+
+<tt>bundle install</tt>  # installs the gems we are using
+
+<tt>rails server</tt>    # starts the rails server located at localhost:3000
+
+Go to <tt>localhost:3000</tt>
+
+App is also accessible on Heroku at http://glassroom.herokuapp.com/
+
+
+In order to run tests, run: <tt>rspec spec/</tt>
+
 = Glassroom Server
 The rails backend. It may get too bulky moving both around, especially if commits get moved around. 
 
@@ -11,3 +34,4 @@ As of 4/9 the server is hosted on AWS. The private key required to SSH into the 
 
 Use the following command to SSH into the instance (from root project directory):
 <tt>ssh -2 -i aws_key.pem ubuntu@ec2-54-187-54-83.us-west-2.compute.amazonaws.com</tt>
+

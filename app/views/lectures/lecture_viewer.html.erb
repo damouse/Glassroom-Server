@@ -5,8 +5,8 @@
 
  <p> Note that notes are the only (planned) media that can be created from the site. We may add manual uploads of images (i.e. not loaded in directly from the app.)</p>
 
-<%= render '/lectures/media_placeholder', :media => @notes %>
-
+<!--%= render '/lectures/media_placeholder', :media => @notes %-->
+<%= render '/lectures/note_viewer', :media => @notes %>
 <h3>Audio:</h3>
 <%= render '/lectures/media_placeholder', :media => @audio %>
 
@@ -14,4 +14,5 @@
 <%= render '/lectures/media_placeholder', :media => @video %>
 
 <h3>Images:</h3>
-<%= render '/lectures/media_placeholder', :media => @images %>
+<!--%= render '/lectures/media_placeholder', :media => @images %-->
+<%= render '/lectures/image_viewer', :media => @images %>
