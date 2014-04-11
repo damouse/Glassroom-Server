@@ -14,6 +14,8 @@ Directions for running app on local (Assumes ruby on rails is installed and in G
 
 <tt>rails server</tt>    # starts the rails server located at localhost:3000
 
+If the server doesn't start at this point, you have a configuration error. The most likely cause of this is a wrong version of Ruby. Please ensure you are using ruby 2.1.0 (this is most easily accomplished by using RVM.)
+
 Go to <tt>localhost:3000</tt>
 
 App is also accessible on Heroku at http://glassroom.herokuapp.com/
