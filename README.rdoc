@@ -79,6 +79,7 @@ Response:
 }</tt>
 
 ==To Upload an Image:
+Images must be base64 encoded!
 ==To Upload Audio:
 ==To Upload Video:
 
