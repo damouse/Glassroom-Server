@@ -32,8 +32,16 @@ Development contains new features. Please do not merge with master without conse
 
 Do not push unstable builds. Do not work on the develop branch, branch changes and merge into dev.
 
+
+= EC2 Administration Details
+
 As of 4/9 the server is hosted on AWS. The private key required to SSH into the server is called <tt>aws_key.pem</tt> and is located in the root directory of the project. 
 
 Use the following command to SSH into the instance (from root project directory):
 <tt>ssh -2 -i aws_key.pem ubuntu@ec2-54-187-54-83.us-west-2.compute.amazonaws.com</tt>
 
+The site is publically visible at the URL <tt>http://ec2-54-186-197-24.us-west-2.compute.amazonaws.com/</tt>
+
+The live site code is located in <tt>/var/www/Glassroom-Server</tt>. To update the code, pull into the directory using git, then restart nginx with <tt>sudo /etc/init.d/nginx restart</tt> (note: custom initialization script, <tt>service nginx restart</tt> will not work due to passenger integration.)
+
+If you need to change server name, error pages, or other passenger configuration, edit the server block of <tt>/opt/nginx/conf/nginx.conf</tt>.
