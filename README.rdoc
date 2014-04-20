@@ -80,6 +80,17 @@ Response:
 
 ==To Upload an Image:
 Images must be base64 encoded!
+
+POST <tt>/api/upload_image</tt>
+Payload: 
+<tt>  
+{
+    "name": "tes1.jpg",
+    "lecture_id": 1,
+    "image_type": "image/jpeg",
+    "image_data":"BINARY DATA"
+}</tt>
+
 ==To Upload Audio:
 ==To Upload Video:
 
