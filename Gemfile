@@ -22,6 +22,10 @@ gem 'jbuilder', '~> 1.2'
 gem 'turbolinks'
 gem 'jquery-rails'
 gem "therubyracer"
+gem "paperclip", "~> 4.1"
+
+#Code Coverage Tool
+gem 'simplecov'
 
 group :production do
   gem 'pg'

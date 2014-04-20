@@ -9,6 +9,7 @@
     <div> 
      <% if element.attributes['url'] %>
      <%= image_tag element.url %>
+     <%= image_tag element.source.url %>
      <% end %> 
    </div>
    <div><%= element.name %></div>
