@@ -9,7 +9,7 @@ class ImagesController < ApplicationController
    #render :text=>"here"
     curr_order = 1
     @new_ids = params[:new_order]
-    @lecture = Lecture.find(@new_ids.first)
+    #@lecture = Lecture.find(@new_ids.first)
     #@images = Image.find(params[:new_order])
     
     @new_ids.each do |i|
