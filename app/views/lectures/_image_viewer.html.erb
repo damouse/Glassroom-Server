@@ -7,10 +7,7 @@
    <li id=<%=element.id %>>
     <%= simple_form_for element, :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
     <div> 
-     <% if element.attributes['url'] %>
-     <%= image_tag element.url %>
-     <%= image_tag element.source.url %>
-     <% end %> 
+     <%= image_tag element.source.url%>
    </div>
    <div><%= element.name %></div>
    <div>Id: <%= element.id %></div>

@@ -55,7 +55,7 @@ GET <tt>/api/login?password=PASSWORD&user_email=EMAIL</tt>
 Note: this is insecure. To fix, convert to POST, https the whole site and include the arguments within the payload (sufficient?)
 
 Sample Response:
-<tt>{
+{
   "response": "user logged in",
   "status": "success",
   "user": {
@@ -66,33 +66,33 @@ Sample Response:
     "email": "test@test.com",
     "authentication_token": "CFpsRE9z_ndxtwc3cKs9"
   }
-}</tt>
+}
 
 
-==To Test an Auth Token:
+===To Test an Auth Token:
 GET <tt>/api/auth?user_email=EMAIL&user_token=TOKEN</tt>
 
 Response:
-<tt>{
+{
   "response": "accepted auth token",
   "status": "success"
-}</tt>
+}
 
-==To Upload an Image:
+===To Upload an Image:
 Images must be base64 encoded!
 
 POST <tt>/api/upload_image</tt>
-Payload: 
-<tt>  
+
+Payload:   
 {
     "name": "tes1.jpg",
     "lecture_id": 1,
     "image_type": "image/jpeg",
     "image_data":"BINARY DATA"
-}</tt>
+}
 
-==To Upload Audio:
-==To Upload Video:
+===To Upload Audio:
+===To Upload Video:
 
 =Miscellanious
 IMPORTANT NOTE: with the addition of paperclip and file-uploading, you MUST have imagemagick installed on whichever system is running the server!
