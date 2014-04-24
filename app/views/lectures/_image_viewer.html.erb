@@ -7,10 +7,7 @@
    <li id=<%=element.id %>>
     <%= simple_form_for element, :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
     <div> 
-     <% if element.attributes['url'] %>
-     <%= image_tag element.url %>
-     <%= image_tag element.source.url %>
-     <% end %> 
+     <%= image_tag element.source.url%>
    </div>
    <div><%= element.name %></div>
    <div>Id: <%= element.id %></div>
@@ -26,7 +23,7 @@
       <!--%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_image_path(element), :class => 'btn' %-->
   </div>
-  <div> <%= link_to 'Delete', '#', :class => 'btn btn-mini btn-danger' %> </div>
+  <div> <!--%= link_to 'Delete', images_delete_path, :class => 'btn btn-mini btn-danger delete_image' %--><%= button_to "delete", element, :method=>:delete, :class=>:destroy %> </div>
   <% end %>
 </li>
 <% end %>

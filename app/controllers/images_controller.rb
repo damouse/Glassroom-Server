@@ -28,5 +28,6 @@ class ImagesController < ApplicationController
   end
 
   def delete
+    @image.destroy
   end
 end

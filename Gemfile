@@ -17,6 +17,7 @@ gem 'cancancan', '~> 1.7'
 
 #API
 gem 'jbuilder', '~> 1.2'
+gem 'google-api-client'
 
 #misc
 gem 'turbolinks'
