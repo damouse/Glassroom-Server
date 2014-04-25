@@ -5,7 +5,7 @@ GlassroomProto::Application.routes.draw do
   
   get "images/sort_order"
   get "images/update"
-  get "images/delete"
+  get "images/delete/:id", to: "images#delete", as: "images_delete"
 
   devise_for :users
 

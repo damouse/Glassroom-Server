@@ -14,17 +14,13 @@
    <div><%= element.created_at %></div>
    <div>Order: <%= element.order %></div>
    <%= f.input :name, input_html: {id: "image-name"} %>
-
-   <!--%= form_remote_tag(:url => {:action => 'update'},
-    :update => "image-name", :position => :bottom,
-    :html => {:id => 'image_form'})%-->
-   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-      <!--%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_image_path(element), :class => 'btn' %-->
-  </div>
-  <div> <!--%= link_to 'Delete', images_delete_path, :class => 'btn btn-mini btn-danger delete_image' %--><%= button_to "delete", element, :method=>:delete, :class=>:destroy %> </div>
+   <!--div class="form-actions">
+    <!--%= f.button :submit, :class => 'btn-primary' %>
+  </div-->
+  
   <% end %>
+  <div> <%= link_to 'Delete', images_delete_path(id: element.id), :class => 'btn btn-mini btn-danger destroy_image' %>
+   </div>
 </li>
 <% end %>
 </ul>
