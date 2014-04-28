@@ -59,7 +59,12 @@
       </div>
       <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
     </div>
+<div id="editor">
+  Go ahead
+</div>
 
-    <div id="editor">
-      Go ahead&hellip;
-    </div>
+<% media.each do |note| %>
+<div id="editor">
+    <%= note.name %>
+</div>
+<% end %>
