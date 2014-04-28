@@ -42,4 +42,44 @@
 	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
   window.prettyPrint && prettyPrint();
 
+  //auto save
+  /*
+  $("input[name=note[text]]").change(function(){
+      var noteHTMLstr = $(this).html();
+      var noteText = $(this).text(noteHTMLstr);
+     $.ajax({   
+        url: "/notes/update",
+        data: {              
+          'note_text': noteText
+        }
+      });
   });
+*/
+$("input[type=note[text]]").change(function(){
+  $(this).parent().submit(function(event){
+    event.preventDefault();
+  });
+});
+/*
+var autosaveOn = false;
+function myAutosavedTextbox_onTextChanged()
+{
+    if (!autosaveOn)
+    {
+        autosaveOn = true;
+
+        $('#myAutosavedTextbox').everyTime("300000", function(){
+             $.ajax({
+                 type: "POST",
+                 url: "autosavecallbackurl",
+                 data: "id=1",
+                 success: function(msg) {
+                     $('#autosavenotify').text(msg);
+                 }
+             });
+        }); //closing tag
+    }
+}
+*/
+
+});

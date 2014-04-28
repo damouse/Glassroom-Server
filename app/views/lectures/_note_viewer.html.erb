@@ -1,19 +1,21 @@
 <%= render '/lectures/editor_toolbar'%>
-<div id="editor">
+<!--div id="editor">
   Go ahead
-</div>
+</div-->
 <ul>
 <% media.each do |note| %>
 <li class='note_<%= note.id%>'>
   <div class='note_name'>
     <%= note.name %>
   </div>
-  <%= simple_form_for note, :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
+  <%= form_for note, remote: true, url: {controller: "notes", action: "update"}, method: "get", html: { :class => 'form-horizontal' } do |f| %>
   <button class='btn btn-mini edit_note'>Edit</button>
   <!--div class='note_text' id="editor"-->
+  <%= hidden_field_tag :id, note.id %>
   <%= render '/lectures/editor_toolbar'%>
-    <%=f.input :text, input_html: { value: note.text, id: "editor"} %>
-    <%=f.submit %>
+    <!--%=f.input :text, input_html: { value: note.text, id: "editor"} %-->
+    <%= f.text_field :text, :value=>note.text %>
+    <!--%=f.submit %-->
   <!--/div-->
   <% end %>
 </li>
