@@ -15,7 +15,7 @@
      <div>Order: <%= element.order %></div>
      <%= f.input :name, input_html: {id: "image-name"} %>
   <% end %>
-  <div> <%= link_to 'Delete', images_delete_path(id: element.id), :class => 'btn btn-mini btn-danger destroy_image' %>
+  <div> <%= link_to 'Delete', images_delete_path(id: element.id), :class => 'btn btn-mini btn-danger destroy_image', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) %>
   </div>
 </li>
 <% end %>
