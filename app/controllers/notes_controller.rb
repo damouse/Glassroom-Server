@@ -20,7 +20,7 @@ class NotesController < ApplicationController
 
   private
     def note_params
-    	params.fetch(:note, {}).permit(:text)
+    	params.fetch(:note, {}).permit(:text, :name, :lecture_id)
        #params.require(:note).permit(:text)
    	end
 end

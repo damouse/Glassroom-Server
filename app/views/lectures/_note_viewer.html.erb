@@ -3,21 +3,28 @@
   Go ahead
 </div-->
 <ul>
-<% media.each do |note| %>
-<li class='note_<%= note.id%>'>
-  <div class='note_name'>
-    <%= note.name %>
+  <%= simple_form_for @new_note, :method=>"get", remote: true, :url=>notes_create_path,:html => { :class => 'form-horizontal' } do |f| %>
+  <!--%= f.input :name %-->
+  <%= f.input :lecture_id, :as => :hidden, :input_html => { :value => @lecture.id } %>
+  <!--%= f.association :lecture %-->
+  <%= f.input :name %>
+  <%= f.input :text %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                notes_create_path, :class => 'btn' %>
   </div>
-  <%= form_for note, remote: true, url: {controller: "notes", action: "update"}, method: "get", html: { :class => 'form-horizontal' } do |f| %>
-  <button class='btn btn-mini edit_note'>Edit</button>
-  <!--div class='note_text' id="editor"-->
-  <%= hidden_field_tag :id, note.id %>
-  <!--%= render '/lectures/editor_toolbar'%-->
-    <!--%=f.input :text, input_html: { value: note.text, id: "editor"} %-->
+<% end %>
+  <% media.each do |note| %>
+  <li class='note_<%= note.id%>'>
+    <div class='note_name'>
+      <%= note.name %>
+    </div>
+    <%= form_for note, remote: true, url: {controller: "notes", action: "update"}, method: "get", html: { :class => 'form-horizontal' } do |f| %>
+    <%= hidden_field_tag :id, note.id %>
     <%= f.text_field :text, :value=>note.text %>
     <!--%=f.submit %-->
-  <!--/div-->
+    <% end %>
+  </li>
   <% end %>
-</li>
-<% end %>
 </ul>
