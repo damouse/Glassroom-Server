@@ -48,23 +48,6 @@ $("#create_new_note_form").on("ajax:success", function(event){
   $(".new_note_name").val('');
   $(".new_note_body").val('');
 });
-  //auto save
-$("input[id=note_text]").change(function(){
-  $(this).parent().submit(function(event){
-    event.preventDefault();
-  });
-});
-$("input[id=note_text]").keypress(function(e) {
-    if(e.which == 13) {
-        //alert('You pressed enter!');
-        //e.preventDefault();
-        $.ajax({
-           type: "GET",
-           url: "/notes/create",
-
-        });
-    }
-});
 
 
 

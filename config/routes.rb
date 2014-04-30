@@ -3,8 +3,8 @@ GlassroomProto::Application.routes.draw do
   get "notes/create"
   get "notes/update"
   get "notes/change_order"
-  get "notes/delete"
-#resources :notes
+  get "notes/delete/:id", to: "notes#delete", as: "notes_delete"
+
   get "images/change_order"
   get "images/edit"
   
