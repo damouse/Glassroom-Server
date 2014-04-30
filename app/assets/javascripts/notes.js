@@ -2,7 +2,7 @@
 //= require bootstrap-wysiwyg
  $(function(){
 
-
+/*
   function initToolbarBootstrapBindings(bindTarget) {
       var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier', 
             'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
@@ -41,45 +41,27 @@
   //$(".btn-toolbar").attr("data-target", "#editor");  
 	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
   window.prettyPrint && prettyPrint();
+  */
 
   //auto save
-  /*
-  $("input[name=note[text]]").change(function(){
-      var noteHTMLstr = $(this).html();
-      var noteText = $(this).text(noteHTMLstr);
-     $.ajax({   
-        url: "/notes/update",
-        data: {              
-          'note_text': noteText
-        }
-      });
-  });
-*/
-$("input[type=note[text]]").change(function(){
+
+$("input[id=note_text]").change(function(){
   $(this).parent().submit(function(event){
     event.preventDefault();
   });
 });
-/*
-var autosaveOn = false;
-function myAutosavedTextbox_onTextChanged()
-{
-    if (!autosaveOn)
-    {
-        autosaveOn = true;
+$("input[id=note_text]").keypress(function(e) {
+    if(e.which == 13) {
+        //alert('You pressed enter!');
+        //e.preventDefault();
+        $.ajax({
+           type: "GET",
+           url: "/notes/create",
 
-        $('#myAutosavedTextbox').everyTime("300000", function(){
-             $.ajax({
-                 type: "POST",
-                 url: "autosavecallbackurl",
-                 data: "id=1",
-                 success: function(msg) {
-                     $('#autosavenotify').text(msg);
-                 }
-             });
-        }); //closing tag
+        });
     }
-}
-*/
+});
+
+
 
 });

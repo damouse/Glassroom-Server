@@ -1,4 +1,4 @@
-<%= render '/lectures/editor_toolbar'%>
+<!--%= render '/lectures/editor_toolbar'%-->
 <!--div id="editor">
   Go ahead
 </div-->
@@ -12,7 +12,7 @@
   <button class='btn btn-mini edit_note'>Edit</button>
   <!--div class='note_text' id="editor"-->
   <%= hidden_field_tag :id, note.id %>
-  <%= render '/lectures/editor_toolbar'%>
+  <!--%= render '/lectures/editor_toolbar'%-->
     <!--%=f.input :text, input_html: { value: note.text, id: "editor"} %-->
     <%= f.text_field :text, :value=>note.text %>
     <!--%=f.submit %-->
