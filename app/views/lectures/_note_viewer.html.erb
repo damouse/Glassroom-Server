@@ -1,18 +1,21 @@
-<!--%= render '/lectures/editor_toolbar'%-->
+
 <!--div id="editor">
   Go ahead
 </div-->
-<ul>
   <%= simple_form_for @new_note, :method=>"get", remote: true, :url=>notes_create_path,:html => { :class => 'form-horizontal', :id => "create_new_note_form" } do |f| %>
   <!--%= f.input :name %-->
   <%= f.input :lecture_id, :as => :hidden, :input_html => { :value => @lecture.id } %>
   <!--%= f.association :lecture %-->
-  <%= f.input :name, :input_html=>{ :class => 'new_note_name' }%>
+  <%= f.input :name, :input_html=>{ :class => 'new_note_name'}%>
+  <!--%= render '/lectures/editor_toolbar'%-->
   <%= f.input :text, :input_html=>{ :class => 'new_note_body' } %>
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
   </div>
 <% end %>
+<ul>
+
   <% media.each do |note| %>
   <li class='note_<%= note.id%>'>
     <div class='note_name'>
