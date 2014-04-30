@@ -47,6 +47,12 @@ $("#create_new_note_form").on("ajax:success", function(event){
   console.log("note create succ");
   $(".new_note_name").val('');
   $(".new_note_body").val('');
+  //location.reload();
+  /*
+  $('#courses_ajax').append("<%= escape_javascript(
+  render :partial => "your_partial", :object => your_varable, 
+  :locals => {:your_other_var => value, ...}  %>");
+*/
 });
 
 
