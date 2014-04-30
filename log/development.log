@@ -46975,3 +46975,1083 @@ Processing by NotesController#update as JS
   Rendered notes/update.html.erb within layouts/application (0.1ms)
   [1m[35mSubject Load (10.2ms)[0m  SELECT "subjects".* FROM "subjects"
 Completed 200 OK in 1761ms (Views: 1692.3ms | ActiveRecord: 40.1ms)
+
+
+Started GET "/notes/create?utf8=%E2%9C%93&note%5Blecture_id%5D=1&note%5Bname%5D=asda&note%5Btext%5D=fsgs&commit=Create+Note" for 192.168.56.1 at 2014-04-30 16:02:38 -0500
+Processing by NotesController#create as JS
+  Parameters: {"utf8"=>"✓", "note"=>{"lecture_id"=>"1", "name"=>"asda", "text"=>"fsgs"}, "commit"=>"Create Note"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (14.0ms)[0m  INSERT INTO "notes" ("created_at", "lecture_id", "name", "text", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 30 Apr 2014 21:02:39 UTC +00:00], ["lecture_id", 1], ["name", "asda"], ["text", "fsgs"], ["updated_at", Wed, 30 Apr 2014 21:02:39 UTC +00:00]]
+  [1m[36m (14.3ms)[0m  [1mcommit transaction[0m
+  Rendered notes/_form.html.erb (38.8ms)
+  Rendered notes/create.html.erb within layouts/application (865.8ms)
+  [1m[35mSubject Load (10.0ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2674ms (Views: 2606.1ms | ActiveRecord: 38.5ms)
+
+
+Started GET "/notes/create?utf8=%E2%9C%93&note%5Blecture_id%5D=1&note%5Bname%5D=note&note%5Btext%5D=1&commit=Create+Note" for 192.168.56.1 at 2014-04-30 16:02:54 -0500
+Processing by NotesController#create as JS
+  Parameters: {"utf8"=>"✓", "note"=>{"lecture_id"=>"1", "name"=>"note", "text"=>"1"}, "commit"=>"Create Note"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (14.4ms)[0m  INSERT INTO "notes" ("created_at", "lecture_id", "name", "text", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 30 Apr 2014 21:02:55 UTC +00:00], ["lecture_id", 1], ["name", "note"], ["text", "1"], ["updated_at", Wed, 30 Apr 2014 21:02:55 UTC +00:00]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  Rendered notes/_form.html.erb (37.0ms)
+  Rendered notes/create.html.erb within layouts/application (869.3ms)
+  [1m[35mSubject Load (9.4ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2689ms (Views: 2629.5ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/notes/create?utf8=%E2%9C%93&note%5Blecture_id%5D=1&note%5Bname%5D=note&note%5Btext%5D=2&commit=Create+Note" for 192.168.56.1 at 2014-04-30 16:03:03 -0500
+Processing by NotesController#create as JS
+  Parameters: {"utf8"=>"✓", "note"=>{"lecture_id"=>"1", "name"=>"note", "text"=>"2"}, "commit"=>"Create Note"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (14.8ms)[0m  INSERT INTO "notes" ("created_at", "lecture_id", "name", "text", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 30 Apr 2014 21:03:03 UTC +00:00], ["lecture_id", 1], ["name", "note"], ["text", "2"], ["updated_at", Wed, 30 Apr 2014 21:03:03 UTC +00:00]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+  Rendered notes/_form.html.erb (36.7ms)
+  Rendered notes/create.html.erb within layouts/application (873.2ms)
+  [1m[35mSubject Load (10.1ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2702ms (Views: 2639.9ms | ActiveRecord: 38.6ms)
+
+
+Started GET "/subjects/1/lectures/1" for 192.168.56.1 at 2014-04-30 16:03:09 -0500
+Processing by LecturesController#lecture_viewer as HTML
+  Parameters: {"subject_id"=>"1", "id"=>"1"}
+  [1m[36mLecture Load (4.7ms)[0m  [1mSELECT "lectures".* FROM "lectures" WHERE "lectures"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mNote Load (5.2ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."lecture_id" = ?  [["lecture_id", 1]]
+  Rendered lectures/_note_viewer.html.erb (103.8ms)
+  [1m[36mAudio Load (5.2ms)[0m  [1mSELECT "audios".* FROM "audios" WHERE "audios"."lecture_id" = ?[0m  [["lecture_id", 1]]
+  Rendered lectures/_media_placeholder.html.erb (15.8ms)
+  [1m[35mVideo Load (4.2ms)[0m  SELECT "videos".* FROM "videos" WHERE "videos"."lecture_id" = ?  [["lecture_id", 1]]
+  Rendered lectures/_media_placeholder.html.erb (14.6ms)
+  [1m[36mImage Load (4.9ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."lecture_id" = ? ORDER BY "images"."order" ASC[0m  [["lecture_id", 1]]
+  Rendered lectures/_image_viewer.html.erb (211.6ms)
+  Rendered lectures/lecture_viewer.html.erb within layouts/application (687.7ms)
+  [1m[35mSubject Load (5.1ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 1744ms (Views: 1700.5ms | ActiveRecord: 29.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.56.1 at 2014-04-30 16:03:12 -0500
+
+
+Started GET "/assets/normal/notes.css?body=1" for 192.168.56.1 at 2014-04-30 16:03:12 -0500
+
+
+Started GET "/assets/normal/main.css?body=1" for 192.168.56.1 at 2014-04-30 16:03:13 -0500
+
+
+Started GET "/subjects/1/lectures/css/sb-admin.css" for 192.168.56.1 at 2014-04-30 16:03:13 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/css/sb-admin.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.8ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (105.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:13 -0500
+
+
+Started GET "/assets/normal/subjects.css?body=1" for 192.168.56.1 at 2014-04-30 16:03:14 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:15 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:15 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:15 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:18 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:18 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:19 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:19 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:19 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:20 -0500
+
+
+Started GET "/assets/bootstrap-wysiwyg.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:20 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:20 -0500
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:21 -0500
+
+
+Started GET "/assets/images.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:21 -0500
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:21 -0500
+
+
+Started GET "/assets/landing.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:22 -0500
+
+
+Started GET "/assets/lectures.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:22 -0500
+
+
+Started GET "/assets/mobile_api.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:23 -0500
+
+
+Started GET "/assets/notes.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:23 -0500
+
+
+Started GET "/assets/static.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:23 -0500
+
+
+Started GET "/assets/subjects.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:24 -0500
+
+
+Started GET "/assets/application.js?body=1" for 192.168.56.1 at 2014-04-30 16:03:24 -0500
+
+
+Started GET "/javascripts/defaults.js" for 192.168.56.1 at 2014-04-30 16:03:24 -0500
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.8ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.0ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (108.5ms)
+
+
+Started GET "/subjects/1/lectures/js/jquery-1.10.2.js" for 192.168.56.1 at 2014-04-30 16:03:25 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/jquery-1.10.2.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.8ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.1ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (117.3ms)
+
+
+Started GET "/subjects/1/lectures/js/bootstrap.js" for 192.168.56.1 at 2014-04-30 16:03:26 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/bootstrap.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.1ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.6ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (112.0ms)
+
+
+Started GET "/subjects/1/lectures/1" for 192.168.56.1 at 2014-04-30 16:09:01 -0500
+Processing by LecturesController#lecture_viewer as HTML
+  Parameters: {"subject_id"=>"1", "id"=>"1"}
+  [1m[36mLecture Load (4.9ms)[0m  [1mSELECT "lectures".* FROM "lectures" WHERE "lectures"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mNote Load (4.8ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."lecture_id" = ?  [["lecture_id", 1]]
+  Rendered lectures/_note_viewer.html.erb (124.7ms)
+  [1m[36mAudio Load (4.8ms)[0m  [1mSELECT "audios".* FROM "audios" WHERE "audios"."lecture_id" = ?[0m  [["lecture_id", 1]]
+  Rendered lectures/_media_placeholder.html.erb (15.4ms)
+  [1m[35mVideo Load (4.5ms)[0m  SELECT "videos".* FROM "videos" WHERE "videos"."lecture_id" = ?  [["lecture_id", 1]]
+  Rendered lectures/_media_placeholder.html.erb (16.6ms)
+  [1m[36mImage Load (4.7ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."lecture_id" = ? ORDER BY "images"."order" ASC[0m  [["lecture_id", 1]]
+  Rendered lectures/_image_viewer.html.erb (224.0ms)
+  Rendered lectures/lecture_viewer.html.erb within layouts/application (726.7ms)
+  [1m[35mSubject Load (5.8ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2840ms (Views: 2791.3ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.56.1 at 2014-04-30 16:09:04 -0500
+
+
+Started GET "/assets/normal/notes.css?body=1" for 192.168.56.1 at 2014-04-30 16:09:05 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:05 -0500
+
+
+Started GET "/assets/normal/subjects.css?body=1" for 192.168.56.1 at 2014-04-30 16:09:06 -0500
+
+
+Started GET "/subjects/1/lectures/css/sb-admin.css" for 192.168.56.1 at 2014-04-30 16:09:06 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/css/sb-admin.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.2ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (109.9ms)
+
+
+Started GET "/assets/normal/main.css?body=1" for 192.168.56.1 at 2014-04-30 16:09:07 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:07 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:09 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:09 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:10 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:10 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:10 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:12 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:12 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:12 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:13 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:13 -0500
+
+
+Started GET "/assets/bootstrap-wysiwyg.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:14 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:14 -0500
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:14 -0500
+
+
+Started GET "/assets/images.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:15 -0500
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:15 -0500
+
+
+Started GET "/assets/landing.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:16 -0500
+
+
+Started GET "/assets/lectures.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:16 -0500
+
+
+Started GET "/assets/mobile_api.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:16 -0500
+
+
+Started GET "/assets/notes.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:17 -0500
+
+
+Started GET "/assets/static.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:17 -0500
+
+
+Started GET "/assets/subjects.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:18 -0500
+
+
+Started GET "/assets/application.js?body=1" for 192.168.56.1 at 2014-04-30 16:09:18 -0500
+
+
+Started GET "/javascripts/defaults.js" for 192.168.56.1 at 2014-04-30 16:09:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.5ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (107.8ms)
+
+
+Started GET "/subjects/1/lectures/js/jquery-1.10.2.js" for 192.168.56.1 at 2014-04-30 16:09:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/jquery-1.10.2.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.9ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (117.9ms)
+
+
+Started GET "/subjects/1/lectures/js/bootstrap.js" for 192.168.56.1 at 2014-04-30 16:09:20 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/bootstrap.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (12.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.1ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (117.8ms)
+
+
+Started GET "/notes/create?utf8=%E2%9C%93&note%5Blecture_id%5D=1&note%5Bname%5D=test&note%5Btext%5D=ajax&commit=Create+Note" for 192.168.56.1 at 2014-04-30 16:09:41 -0500
+Processing by NotesController#create as JS
+  Parameters: {"utf8"=>"✓", "note"=>{"lecture_id"=>"1", "name"=>"test", "text"=>"ajax"}, "commit"=>"Create Note"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (14.0ms)[0m  INSERT INTO "notes" ("created_at", "lecture_id", "name", "text", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 30 Apr 2014 21:09:41 UTC +00:00], ["lecture_id", 1], ["name", "test"], ["text", "ajax"], ["updated_at", Wed, 30 Apr 2014 21:09:41 UTC +00:00]]
+  [1m[36m (13.3ms)[0m  [1mcommit transaction[0m
+  Rendered notes/_form.html.erb (37.6ms)
+  Rendered notes/create.html.erb within layouts/application (867.2ms)
+  [1m[35mSubject Load (10.2ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2647ms (Views: 2586.1ms | ActiveRecord: 37.7ms)
+
+
+Started GET "/subjects/1/lectures/1" for 192.168.56.1 at 2014-04-30 16:13:59 -0500
+Processing by LecturesController#lecture_viewer as HTML
+  Parameters: {"subject_id"=>"1", "id"=>"1"}
+  [1m[36mLecture Load (4.9ms)[0m  [1mSELECT "lectures".* FROM "lectures" WHERE "lectures"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mNote Load (5.6ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."lecture_id" = ?  [["lecture_id", 1]]
+  Rendered lectures/_note_viewer.html.erb (118.6ms)
+  [1m[36mAudio Load (4.7ms)[0m  [1mSELECT "audios".* FROM "audios" WHERE "audios"."lecture_id" = ?[0m  [["lecture_id", 1]]
+  Rendered lectures/_media_placeholder.html.erb (14.8ms)
+  [1m[35mVideo Load (5.4ms)[0m  SELECT "videos".* FROM "videos" WHERE "videos"."lecture_id" = ?  [["lecture_id", 1]]
+  Rendered lectures/_media_placeholder.html.erb (14.7ms)
+  [1m[36mImage Load (4.9ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."lecture_id" = ? ORDER BY "images"."order" ASC[0m  [["lecture_id", 1]]
+  Rendered lectures/_image_viewer.html.erb (188.0ms)
+  Rendered lectures/lecture_viewer.html.erb within layouts/application (695.3ms)
+  [1m[35mSubject Load (5.5ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2791ms (Views: 2746.9ms | ActiveRecord: 31.1ms)
+
+
+Started GET "/assets/normal/main.css?body=1" for 192.168.56.1 at 2014-04-30 16:14:02 -0500
+
+
+Started GET "/assets/application.css?body=1" for 192.168.56.1 at 2014-04-30 16:14:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:03 -0500
+
+
+Started GET "/assets/normal/notes.css?body=1" for 192.168.56.1 at 2014-04-30 16:14:04 -0500
+
+
+Started GET "/assets/normal/subjects.css?body=1" for 192.168.56.1 at 2014-04-30 16:14:04 -0500
+
+
+Started GET "/subjects/1/lectures/css/sb-admin.css" for 192.168.56.1 at 2014-04-30 16:14:04 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/css/sb-admin.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.8ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.6ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (103.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:07 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:07 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:09 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:09 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:09 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:10 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:10 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:10 -0500
+
+
+Started GET "/assets/bootstrap-wysiwyg.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:11 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:11 -0500
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:12 -0500
+
+
+Started GET "/assets/images.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:12 -0500
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:12 -0500
+
+
+Started GET "/assets/landing.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:13 -0500
+
+
+Started GET "/assets/lectures.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:13 -0500
+
+
+Started GET "/assets/mobile_api.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:13 -0500
+
+
+Started GET "/assets/notes.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:14 -0500
+
+
+Started GET "/assets/static.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:14 -0500
+
+
+Started GET "/assets/subjects.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:15 -0500
+
+
+Started GET "/assets/application.js?body=1" for 192.168.56.1 at 2014-04-30 16:14:15 -0500
+
+
+Started GET "/javascripts/defaults.js" for 192.168.56.1 at 2014-04-30 16:14:16 -0500
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.4ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (106.8ms)
+
+
+Started GET "/subjects/1/lectures/js/jquery-1.10.2.js" for 192.168.56.1 at 2014-04-30 16:14:17 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/jquery-1.10.2.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (16.2ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.1ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (127.2ms)
+
+
+Started GET "/subjects/1/lectures/js/bootstrap.js" for 192.168.56.1 at 2014-04-30 16:14:17 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/bootstrap.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (12.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (112.7ms)
+
+
+Started GET "/notes/create?utf8=%E2%9C%93&note%5Blecture_id%5D=1&note%5Bname%5D=test&note%5Btext%5D=reset+form&commit=Create+Note" for 192.168.56.1 at 2014-04-30 16:14:34 -0500
+Processing by NotesController#create as JS
+  Parameters: {"utf8"=>"✓", "note"=>{"lecture_id"=>"1", "name"=>"test", "text"=>"reset form"}, "commit"=>"Create Note"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.1ms)[0m  INSERT INTO "notes" ("created_at", "lecture_id", "name", "text", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 30 Apr 2014 21:14:34 UTC +00:00], ["lecture_id", 1], ["name", "test"], ["text", "reset form"], ["updated_at", Wed, 30 Apr 2014 21:14:34 UTC +00:00]]
+  [1m[36m (16.5ms)[0m  [1mcommit transaction[0m
+  Rendered notes/_form.html.erb (35.4ms)
+  Rendered notes/create.html.erb within layouts/application (865.8ms)
+  [1m[35mSubject Load (9.5ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2713ms (Views: 2643.6ms | ActiveRecord: 41.4ms)
+
+
+Started GET "/subjects/1/lectures/1" for 192.168.56.1 at 2014-04-30 16:15:17 -0500
+Processing by LecturesController#lecture_viewer as HTML
+  Parameters: {"subject_id"=>"1", "id"=>"1"}
+  [1m[36mLecture Load (4.6ms)[0m  [1mSELECT "lectures".* FROM "lectures" WHERE "lectures"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mNote Load (5.2ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."lecture_id" = ?  [["lecture_id", 1]]
+  Rendered lectures/_note_viewer.html.erb (112.6ms)
+  [1m[36mAudio Load (5.0ms)[0m  [1mSELECT "audios".* FROM "audios" WHERE "audios"."lecture_id" = ?[0m  [["lecture_id", 1]]
+  Rendered lectures/_media_placeholder.html.erb (15.9ms)
+  [1m[35mVideo Load (4.9ms)[0m  SELECT "videos".* FROM "videos" WHERE "videos"."lecture_id" = ?  [["lecture_id", 1]]
+  Rendered lectures/_media_placeholder.html.erb (14.1ms)
+  [1m[36mImage Load (5.0ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."lecture_id" = ? ORDER BY "images"."order" ASC[0m  [["lecture_id", 1]]
+  Rendered lectures/_image_viewer.html.erb (187.4ms)
+  Rendered lectures/lecture_viewer.html.erb within layouts/application (677.3ms)
+  [1m[35mSubject Load (4.9ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2714ms (Views: 2672.3ms | ActiveRecord: 29.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.56.1 at 2014-04-30 16:15:21 -0500
+
+
+Started GET "/assets/normal/main.css?body=1" for 192.168.56.1 at 2014-04-30 16:15:21 -0500
+
+
+Started GET "/assets/normal/notes.css?body=1" for 192.168.56.1 at 2014-04-30 16:15:22 -0500
+
+
+Started GET "/assets/normal/subjects.css?body=1" for 192.168.56.1 at 2014-04-30 16:15:22 -0500
+
+
+Started GET "/subjects/1/lectures/css/sb-admin.css" for 192.168.56.1 at 2014-04-30 16:15:23 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/css/sb-admin.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.3ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.4ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (105.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:24 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:24 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:24 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:25 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:25 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:25 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:27 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:27 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:27 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:28 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:29 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:29 -0500
+
+
+Started GET "/assets/bootstrap-wysiwyg.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:29 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:30 -0500
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:30 -0500
+
+
+Started GET "/assets/images.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:31 -0500
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:31 -0500
+
+
+Started GET "/assets/landing.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:31 -0500
+
+
+Started GET "/assets/lectures.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:32 -0500
+
+
+Started GET "/assets/mobile_api.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:32 -0500
+
+
+Started GET "/assets/notes.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:32 -0500
+
+
+Started GET "/assets/static.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:33 -0500
+
+
+Started GET "/assets/subjects.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:33 -0500
+
+
+Started GET "/assets/application.js?body=1" for 192.168.56.1 at 2014-04-30 16:15:34 -0500
+
+
+Started GET "/javascripts/defaults.js" for 192.168.56.1 at 2014-04-30 16:15:35 -0500
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.1ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (119.9ms)
+
+
+Started GET "/subjects/1/lectures/js/jquery-1.10.2.js" for 192.168.56.1 at 2014-04-30 16:15:35 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/jquery-1.10.2.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (17.1ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (139.2ms)
+
+
+Started GET "/subjects/1/lectures/js/bootstrap.js" for 192.168.56.1 at 2014-04-30 16:15:36 -0500
+
+ActionController::RoutingError (No route matches [GET] "/subjects/1/lectures/js/bootstrap.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mizu/.rvm/rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.4ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.9ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendered /home/mizu/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (112.6ms)
+
+
+Started GET "/notes/create?utf8=%E2%9C%93&note%5Blecture_id%5D=1&note%5Bname%5D=reset&note%5Btext%5D=form&commit=Create+Note" for 192.168.56.1 at 2014-04-30 16:15:48 -0500
+Processing by NotesController#create as JS
+  Parameters: {"utf8"=>"✓", "note"=>{"lecture_id"=>"1", "name"=>"reset", "text"=>"form"}, "commit"=>"Create Note"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (16.3ms)[0m  INSERT INTO "notes" ("created_at", "lecture_id", "name", "text", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 30 Apr 2014 21:15:49 UTC +00:00], ["lecture_id", 1], ["name", "reset"], ["text", "form"], ["updated_at", Wed, 30 Apr 2014 21:15:49 UTC +00:00]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+  Rendered notes/_form.html.erb (39.8ms)
+  Rendered notes/create.html.erb within layouts/application (847.9ms)
+  [1m[35mSubject Load (11.9ms)[0m  SELECT "subjects".* FROM "subjects"
+Completed 200 OK in 2652ms (Views: 2586.3ms | ActiveRecord: 41.5ms)
