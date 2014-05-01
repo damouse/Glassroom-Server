@@ -14,9 +14,10 @@
     <%= f.button :submit, :class => 'btn-primary' %>
   </div>
 <% end %>
-<ul>
+<ul class='note_list'>
 
   <% media.each do |note| %>
+ 
   <li class='note_<%= note.id%>'>
     <div class='note_name'>
       <%= note.name %>
@@ -30,3 +31,16 @@
   </li>
   <% end %>
 </ul>
+ <script> 
+  $(function(){
+       $("#create_new_note_form").on("ajax:success", function(event){
+        event.preventDefault();
+          console.log("note create succ");
+          $('.note_list').prepend('<%= escape_javascript(render :partial => "notes/note_update_form", :locals => {:note => @new_note})  %>');
+          $(".new_note_name").val('');
+          $(".new_note_body").val('');
+          
+       });
+          
+  });
+  </script>
