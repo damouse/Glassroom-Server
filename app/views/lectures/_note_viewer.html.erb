@@ -36,10 +36,10 @@
        $("#create_new_note_form").on("ajax:success", function(event){
         event.preventDefault();
           console.log("note create succ");
-          $('.note_list').prepend('<%= escape_javascript(render :partial => "notes/note_update_form", :locals => {:note => @new_note})  %>');
-          $(".new_note_name").val('');
+         $(".new_note_name").val('');
           $(".new_note_body").val('');
           
+          $('.note_list').prepend('<%= escape_javascript(render :partial => "lectures/note_update_form", :note=> @note_most_recent)  %>');    
        });
           
   });

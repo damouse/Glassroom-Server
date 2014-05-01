@@ -2,11 +2,13 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
   end
+  
   def create
     @note = Note.new(note_params)
     @note.save
     redirect_to(:back)
   end
+
 
   def update
   	@note = Note.find(params[:id])
