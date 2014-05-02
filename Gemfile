@@ -17,14 +17,13 @@ gem 'cancancan', '~> 1.7'
 
 #API
 gem 'jbuilder', '~> 1.2'
-gem 'google-api-client'
 
 #misc
 gem 'turbolinks'
 gem 'jquery-rails'
 gem "therubyracer"
 gem "paperclip", "~> 4.1"
-gem 'spellchecker', '~> 0.1.5'
+
 #Code Coverage Tool
 gem 'simplecov'
 

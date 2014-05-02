@@ -1,16 +1,12 @@
 GlassroomProto::Application.routes.draw do
-
-  get "notes/create"
-  get "notes/update"
-  get "notes/change_order"
-  get "notes/delete/:id", to: "notes#delete", as: "notes_delete"
-
+  get "mobile_api/auth"
+  #resources :images
   get "images/change_order"
   get "images/edit"
   
   get "images/sort_order"
   get "images/update"
-  get "images/delete/:id", to: "images#delete", as: "images_delete"
+  get "images/delete"
 
   devise_for :users
 
@@ -18,7 +14,6 @@ GlassroomProto::Application.routes.draw do
   match '/api/auth', to: 'mobile_api#auth', via: 'get'
   match '/api/login', to: 'mobile_api#mobile_login', via: 'get'
   match '/api/upload_image', to: 'mobile_api#upload_image', via: 'post'
-  match '/api/create_lecture', to: 'mobile_api#create_lecture', via: 'post'
 
   root  'landing#home'
 
@@ -27,7 +22,6 @@ GlassroomProto::Application.routes.draw do
   end
 
   match '/dashboard',   to: 'static#dashboard',   via: 'get'
-  match '/account',   to: 'static#account',   via: 'get'
   match '/bootstrapExamples',   to: 'static#bsexamples',   via: 'get'
   
 
