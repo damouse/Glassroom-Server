@@ -31,33 +31,6 @@ class MobileApiController < ApplicationController
 		end
 	end
 
-	#create a new lecture object for the passed user. 
-	def create_lecture
-		email = params[:user_email]
-
-		if not email.present?
-			render :json => {response:'missing parameters', status:'fail'}
-		else
-			#find user with email
-			user = User.find_by_email(email)
-
-			if not user.present?
-				render :json => {response:'user not found', status:'fail', parameters:params}
-			else
-				#add the lecture to id 1
-				subject = user.subjects.find_by_id(1)
-				lecture = Lecture.new(name:'New Lecture', subject_id:subject.id)
-
-				if lecture.save
-					lecture.update_attributes(name:"New Lecture #{lecture.id}")
-					render :json => {response:'saved new lecture', status:'success', lecture:lecture}
-				else
-					render :json => {response:'an error occured creating new lecture', status:'fail', parameters:lecture.errors.full_messages}
-				end
-			end
-		end
-	end
-
 	#uploading an image
 	def upload_image
 		if not user_signed_in?

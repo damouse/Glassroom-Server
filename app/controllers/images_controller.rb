@@ -28,8 +28,5 @@ class ImagesController < ApplicationController
   end
 
   def delete
-    @image = Image.find(params[:id])
-    @image.destroy
-    redirect_to(:back)
   end
 end
