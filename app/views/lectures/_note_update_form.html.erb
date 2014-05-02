@@ -1,0 +1,17 @@
+<!--This form is for the newly generated note only, serves as a blank template
+   and uses javascipt to inject the new values, DO NOT USE IT AS A PARTIAL FOR 
+   ANY OTHER NOTE UPDATE FORM EVEN THOUGH THEY ARE THE SAME IN FORMAT -->
+<li class='note_<%= note.id%>'>
+    <div class='note_name'>
+      <%= note.name %>
+    </div>
+    <%= form_for note, remote: true, url: {controller: "notes", action: "update"}, method: "get", html: { :class => 'form-horizontal edit_note_form' } do |f| %>
+    <%= hidden_field_tag :id, note.id %>
+    <%= f.text_field :text, :value=>note.text %>
+    <!--%=f.submit %-->
+    <% end %>
+
+    <%= link_to 'Delete', notes_delete_path(id: 0), :class => 'btn btn-mini btn-danger destroy_note', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
+
+    
+  </li>
