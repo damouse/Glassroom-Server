@@ -25,6 +25,8 @@ class ImagesController < ApplicationController
   end
 
   def update
+    @image = Image.find(params[:id])
+    @image.update(image_params)
   end
 
   def delete
@@ -32,4 +34,9 @@ class ImagesController < ApplicationController
     @image.destroy
     redirect_to(:back)
   end
+
+  private
+    def image_params
+      params.fetch(:image, {}).permit(:name)
+    end
 end
