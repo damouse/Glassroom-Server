@@ -3,7 +3,7 @@ class LecturesController < ApplicationController
   	@lecture = Lecture.find(params[:id])
     @new_note = Note.new(note_params)
   	@notes = @lecture.notes
-    @note_most_recent = @notes.order("created_at DESC").first
+    @blank_note = Note.new
   	@images = (@lecture.images).order(:order)
   	@audio = @lecture.audios
   	@video = @lecture.videos 

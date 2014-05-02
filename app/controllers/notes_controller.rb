@@ -1,12 +1,14 @@
 class NotesController < ApplicationController
+  respond_to :json, :html
+
   def new
     @note = Note.new
   end
   
   def create
-    @note = Note.new(note_params)
+    @note = Note.new note_params
     @note.save
-    redirect_to(:back)
+    respond_with @note
   end
 
 
