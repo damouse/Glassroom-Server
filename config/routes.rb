@@ -12,6 +12,7 @@ GlassroomProto::Application.routes.draw do
   get "images/update"
   get "images/delete/:id", to: "images#delete", as: "images_delete"
 
+  match "/invalid_resource", to: "static#invalid_path", via: "get"
   devise_for :users
 
   #consolidate these - Mickey

@@ -7,4 +7,8 @@ class StaticController < ApplicationController
 
   def account
   end
+
+  def invalid_path
+
+  end
 end
