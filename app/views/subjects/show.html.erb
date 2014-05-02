@@ -46,6 +46,7 @@
               subjects_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_subject_path(@subject), :class => 'btn' %>
+  <%= link_to 'New', new_subject_path, :class => 'btn btn-mini btn-success'  %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               subject_path(@subject),
               :method => 'delete',

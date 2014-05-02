@@ -4,7 +4,4 @@ class StaticController < ApplicationController
 
   def bsexamples
   end
-
-  def account
-  end
 end
