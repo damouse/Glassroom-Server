@@ -11,20 +11,19 @@ class ImagesController < ApplicationController
     @new_ids = params[:new_order]
     #@lecture = Lecture.find(@new_ids.first)
     #@images = Image.find(params[:new_order])
-    
     @new_ids.each do |i|
       @image = Image.find(i);
       @image.update_attribute(:order, curr_order)
       curr_order = curr_order + 1
     end
-    #redirect_to subjects_path
-    return
   end
 
   def sort_order
   end
 
   def update
+    @image = Image.find(params[:id])
+    @image.update(image_params)
   end
 
   def delete
@@ -32,4 +31,9 @@ class ImagesController < ApplicationController
     @image.destroy
     redirect_to(:back)
   end
+
+  private
+    def image_params
+      params.fetch(:image, {}).permit(:name)
+    end
 end

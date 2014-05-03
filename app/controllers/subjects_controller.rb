@@ -11,7 +11,7 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
-    @lectures = @subject.lectures
+    @lectures = @subject.lectures.order("updated_at DESC");
   end
 
   # GET /subjects/new
