@@ -1,4 +1,5 @@
 
+
 <!--div id="editor">
   Go ahead
 </div-->
@@ -15,6 +16,22 @@
     <%= f.button :submit, :class => 'btn-primary btn btn-mini', :value=>"Create" %>
 
 
+
+  </div>
+<% end %>
+<ul class='note_list'>
+
+  <%= simple_form_for @new_note, :method=>"get", remote: true, :url=>notes_create_path,:html => { :class => 'form-horizontal', :id => "create_new_note_form" } do |f| %>
+  <!--%= f.input :name %-->
+  <%= f.input :lecture_id, :as => :hidden, :input_html => { :value => @lecture.id } %>
+  <!--%= f.association :lecture %-->
+  <%= f.input :name, :input_html=>{ :class => 'new_note_name'}%>
+  <!--%= render '/lectures/editor_toolbar'%-->
+  <%= f.input :text, :input_html=>{ :class => 'new_note_body' } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+
   </div>
 <% end %>
 <ul class='note_list'>
@@ -30,6 +47,8 @@
     <%= f.text_field :text, :value=>note.text %>
 
     <%=f.submit :class=>"btn btn-mini btn-primary", :value=>"Update"%>
+
+
 
     <% end %>
     <%= link_to 'Delete', notes_delete_path(id: note.id), :class => 'btn btn-mini btn-danger destroy_note', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
@@ -51,6 +70,9 @@
           var element = $('.note_list').prepend('<%= escape_javascript(render :partial => "lectures/note_update_form", :locals => {:note=> @blank_note})   %>');
           //injects the new values to the update form for this new note
           element.find('#id').first().val(data.id); 
+
+
+
 
           element.find('li').first().attr("id", "note_" + data.id);
           element.find("div.note_name").first().html(data.name);
