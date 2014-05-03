@@ -5,11 +5,11 @@
 
     <% media.each do |element| %>
     <li id=<%=element.id %>>
-<<<<<<< HEAD
+
       <%= simple_form_for element, url: {controller: "images", action: "update"}, method: "get", :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
-=======
+
       <%= simple_form_for element, :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
->>>>>>> fbe9d10ce4f130fa240cbb35090b2545292db751
+
       <div> 
        <%= image_tag element.source.url%>
      </div>
@@ -17,13 +17,10 @@
      <div>Id: <%= element.id %></div>
      <div><%= element.created_at %></div>
      <div>Order: <%= element.order %></div>
-<<<<<<< HEAD
+
      <%= hidden_field_tag :id, element.id %>
      <%= f.input :name, input_html: {id: "image-name"} %>
      <%= f.button :submit, :class => 'btn-primary btn btn-mini', :value=>"Update" %>
-=======
-     <%= f.input :name, input_html: {id: "image-name"} %>
->>>>>>> fbe9d10ce4f130fa240cbb35090b2545292db751
   <% end %>
   <div> <%= link_to 'Delete', images_delete_path(id: element.id), :class => 'btn btn-mini btn-danger destroy_image', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))} %>
   </div>
