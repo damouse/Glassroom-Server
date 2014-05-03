@@ -5,7 +5,7 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = current_user.subjects
   end
 
   # GET /subjects/1
@@ -27,6 +27,7 @@ class SubjectsController < ApplicationController
   # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
+    @subject.user_id = current_user.id
 
     respond_to do |format|
       if @subject.save
