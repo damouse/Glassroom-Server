@@ -1,10 +1,12 @@
 class LecturesController < ApplicationController
   def lecture_viewer
   	@lecture = Lecture.find(params[:id])
-  	@notes = @lecture.notes
+    @new_note = Note.new(note_params)
+  	@notes = @lecture.notes.order("created_at DESC")
+    @blank_note = Note.new
   	@images = (@lecture.images).order(:order)
   	@audio = @lecture.audios
-  	@video = @lecture.videos
+  	@video = @lecture.videos 
   end
   
   #media creation methods, only accessible through API (excepting note)
@@ -23,4 +25,9 @@ class LecturesController < ApplicationController
   def create_image
 
   end
+  private
+    def note_params
+      params.fetch(:note, {}).permit(:text, :name, :lecture_id)
+       #params.require(:note).permit(:text)
+    end
 end
