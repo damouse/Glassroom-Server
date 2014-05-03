@@ -8,7 +8,10 @@ class LecturesController < ApplicationController
   	@audio = @lecture.audios
   	@video = @lecture.videos 
   end
-  
+ 
+  def most_recent_note
+  end
+
   #media creation methods, only accessible through API (excepting note)
   def create_note
 
