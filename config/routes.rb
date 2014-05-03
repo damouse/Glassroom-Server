@@ -1,4 +1,5 @@
 GlassroomProto::Application.routes.draw do
+
   get "mobile_api/auth"
 
   get "notes/create"
@@ -19,6 +20,7 @@ GlassroomProto::Application.routes.draw do
   match '/api/auth', to: 'mobile_api#auth', via: 'get'
   match '/api/login', to: 'mobile_api#mobile_login', via: 'get'
   match '/api/upload_image', to: 'mobile_api#upload_image', via: 'post'
+  match '/api/create_lecture', to: 'mobile_api#create_lecture', via: 'post'
 
   root  'landing#home'
 
@@ -27,6 +29,7 @@ GlassroomProto::Application.routes.draw do
   end
 
   match '/dashboard',   to: 'static#dashboard',   via: 'get'
+  match '/account',   to: 'static#account',   via: 'get'
   match '/bootstrapExamples',   to: 'static#bsexamples',   via: 'get'
   
 

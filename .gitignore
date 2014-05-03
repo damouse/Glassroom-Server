@@ -1,3 +1,4 @@
-./tmp/pids/server.pid
-/log/development.log
-/public/sources
+/tmp
+/log
+/public
+/db
