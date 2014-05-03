@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> a3a9b79bc2299930e96f049da7e235d2856b8d1d
 
 
 <!--div id="editor">
@@ -19,26 +16,7 @@
 
     <%= f.button :submit, :class => 'btn-primary btn btn-mini', :value=>"Create" %>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> a3a9b79bc2299930e96f049da7e235d2856b8d1d
-
-  </div>
-<% end %>
-<ul class='note_list'>
-
-<<<<<<< HEAD
-  <%= simple_form_for @new_note, :method=>"get", remote: true, :url=>notes_create_path,:html => { :class => 'form-horizontal', :id => "create_new_note_form" } do |f| %>
-  <!--%= f.input :name %-->
-  <%= f.input :lecture_id, :as => :hidden, :input_html => { :value => @lecture.id } %>
-  <!--%= f.association :lecture %-->
-  <%= f.input :name, :input_html=>{ :class => 'new_note_name'}%>
-  <!--%= render '/lectures/editor_toolbar'%-->
-  <%= f.input :text, :input_html=>{ :class => 'new_note_body' } %>
-
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
 
 
   </div>
