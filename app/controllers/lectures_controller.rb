@@ -2,7 +2,7 @@ class LecturesController < ApplicationController
   def lecture_viewer
   	@lecture = Lecture.find(params[:id])
     @new_note = Note.new(note_params)
-  	@notes = @lecture.notes
+  	@notes = @lecture.notes.order("created_at DESC")
     @blank_note = Note.new
   	@images = (@lecture.images).order(:order)
   	@audio = @lecture.audios

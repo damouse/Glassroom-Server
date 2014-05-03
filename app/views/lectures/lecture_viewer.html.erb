@@ -5,15 +5,20 @@
 
 
 
+
+
 	<%= render '/lectures/note_viewer', :media => @notes %>
 
 
-<h3>Audio:</h3>
-<%= render '/lectures/media_placeholder', :media => @audio %>
 
-<div class='lecture-resource lec-videos'>
-<h3>Video:</h3>
-<%= render '/lectures/media_placeholder', :media => @video %>
+
+	<h3>Audio:</h3>
+	<%= render '/lectures/media_placeholder', :media => @audio %>
+
+	<div class='lecture-resource lec-videos'>
+	<h3>Video:</h3>
+	<%= render '/lectures/media_placeholder', :media => @video %>
+	</div>
 
 <div class='lecture-resource lec-images'>
 <h3>Images:</h3>
@@ -22,4 +27,3 @@
 
 </div>
 </div>
-
