@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <%= csrf_meta_tags %>
+    <title>Glassroom</title>
+
+    <!-- NOTE TO DEVELOPERS:
+    Theres something strange going on here. If you remove the stock imports from
+    the head of this document everything breaks, even though bootstrap is included 
+    into this project.
+
+    To fix the issue I had to continue pulling CSS from remote sites, but this isnt
+    exactly stable. Also had to move the bootstrap import and override file out of the 
+    css folder - it will no longer be active! Find a way to fix this.
+     -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+
+
+  <body>
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Glassroom</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav fixedNav" style='position:fixed'>
+            <!-- <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li> -->
+            <li class="dropdown">
+              <a href="<%= subjects_url %>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Subjects <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <% getUserSubjects.each do |subject| %>
+                <li><a href="<%= getSubjectUrl(subject) %>"><%= subject.name %></a></li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <% 
+              name = ''
+              if current_user != nil
+                name = current_user.email
+                end%><%=name%> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+
+                <li><a rel="nofollow" href="/account"><i class="fa fa-gear"></i>  Account Settings</a></li>
+                <div class="divider"></div>
+                <li><a rel="nofollow" href="/users/sign_out" data-method="delete"><i class="fa fa-power-off"></i>  Log Out</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+      <%= yield %>
+      </div><!-- /#page-wrapper -->
+
+      <%= debug(params) if Rails.env.development? %>
+    
+    </div><!-- /#wrapper -->
+    
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>
+

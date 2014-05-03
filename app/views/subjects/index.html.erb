@@ -1,0 +1,29 @@
+<%- model_class = Subject -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td><%= subject.description %></td>
+        <td align='right'>
+          <%= link_to 'View', subject_path(subject.id), :class => 'btn btn-mini btn-success' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_subject_path,
+            :class => 'btn btn-primary' %>

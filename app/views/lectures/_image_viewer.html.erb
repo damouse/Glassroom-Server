@@ -1,0 +1,24 @@
+
+<div class='image-wrapper'>
+	<ul class='lecture-img' id='lecture-img-sortable'>
+    <!--button id='change-img-order'>Update</button-->
+
+    <% media.each do |element| %>
+    <li id=<%=element.id %>>
+      <%= simple_form_for element, :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
+      <div> 
+       <%= image_tag element.source.url%>
+     </div>
+     <div><%= element.name %></div>
+     <div>Id: <%= element.id %></div>
+     <div><%= element.created_at %></div>
+     <div>Order: <%= element.order %></div>
+     <%= f.input :name, input_html: {id: "image-name"} %>
+  <% end %>
+  <div> <%= link_to 'Delete', images_delete_path(id: element.id), :class => 'btn btn-mini btn-danger destroy_image', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))} %>
+  </div>
+</li>
+<% end %>
+</ul>
+
+</div>

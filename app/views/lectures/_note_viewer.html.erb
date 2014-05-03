@@ -1,0 +1,55 @@
+
+<!--div id="editor">
+  Go ahead
+</div-->
+  <%= simple_form_for @new_note, :method=>"get", remote: true, :url=>notes_create_path,:html => { :class => 'form-horizontal', :id => "create_new_note_form" } do |f| %>
+  <!--%= f.input :name %-->
+  <%= f.input :lecture_id, :as => :hidden, :input_html => { :value => @lecture.id } %>
+  <!--%= f.association :lecture %-->
+  <%= f.input :name, :input_html=>{ :class => 'new_note_name'}%>
+  <!--%= render '/lectures/editor_toolbar'%-->
+  <%= f.input :text, :input_html=>{ :class => 'new_note_body' } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+  </div>
+<% end %>
+<ul class='note_list'>
+
+  <% media.each do |note| %>
+ 
+  <li class='note_<%= note.id%>'>
+    <div class='note_name'>
+      <%= note.name %>
+    </div>
+    <%= form_for note, remote: true, url: {controller: "notes", action: "update"}, method: "get", html: { :class => 'form-horizontal edit_note_form' } do |f| %>
+    <%= hidden_field_tag :id, note.id %>
+    <%= f.text_field :text, :value=>note.text %>
+    <!--%=f.submit %-->
+    <% end %>
+    <%= link_to 'Delete', notes_delete_path(id: note.id), :class => 'btn btn-mini btn-danger destroy_note', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
+  </li>
+  <% end %>
+</ul>
+ <script> 
+ //this script is here because js in assets does not accept render partial
+ //in escape_javascript
+  $(function(){
+       $("#create_new_note_form").on("ajax:success", function(event, data){
+        event.preventDefault();
+          console.log("note create succ", data.text, data.name);
+          //Clear out create form fields, so that user knows it's done and 
+          //ready to be used for creating another new note
+         $(".new_note_name").val('');
+        $(".new_note_body").val('');
+          //display the newly create note at top of the list
+          var element = $('.note_list').prepend('<%= escape_javascript(render :partial => "lectures/note_update_form", :locals => {:note=> @blank_note})   %>');
+          //injects the new values to the update form for this new note
+          element.find('#id').first().val(data.id); 
+          element.find("#note_text").first().val(data.text);
+          //feed back delete url
+          element.find(".destroy_note").first().attr("href", "/notes/delete/" + data.id);
+       });
+          
+  });
+  </script>

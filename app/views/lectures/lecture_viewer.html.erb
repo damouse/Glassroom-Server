@@ -1,0 +1,21 @@
+<h1>Lecture: <%= @lecture.name%></h1>
+<p>Work in Progress. Please note that content below represents the stored media for this lecture, but is horribly static. All this content will be avaliable dynamically.</p>
+
+<div class='lecture-resources-wrapper'>
+
+
+<%= render '/lectures/note_viewer', :media => @notes %>
+
+<h3>Audio:</h3>
+<%= render '/lectures/media_placeholder', :media => @audio %>
+
+<div class='lecture-resource lec-videos'>
+<h3>Video:</h3>
+<%= render '/lectures/media_placeholder', :media => @video %>
+
+<div class='lecture-resource lec-images'>
+<h3>Images:</h3>
+<!--%= render '/lectures/media_placeholder', :media => @images %-->
+<%= render '/lectures/image_viewer', :media => @images %>
+
+</div>

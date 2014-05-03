@@ -1,0 +1,10 @@
+<%= simple_form_for @lecture, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :order %>
+  <%= f.association :lecture %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                subjects_path, :class => 'btn' %>
+  </div>
+<% end %>

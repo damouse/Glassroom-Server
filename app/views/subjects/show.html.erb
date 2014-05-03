@@ -1,0 +1,54 @@
+<%- model_class = Subject -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => @subject.name %></h1>
+</div>
+
+<h3>Subject Information</h3>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @subject.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @subject.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dd><%= @subject.image %></dd>
+</dl>
+
+<hr>
+<h3>Lectures</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lectures.each do |lecture| %>
+      <tr>
+        <td><%= lecture.name %></td>
+        <td><%= lecture.created_at %></td>
+        <td>
+          <%= link_to 'View', subject_lecture_path(@subject.id, lecture.id), :class => 'btn btn-mini btn-success' %>
+          <%= link_to 'Delete', '#', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              subjects_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_subject_path(@subject), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              subject_path(@subject),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

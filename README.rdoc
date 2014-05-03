@@ -1,0 +1,119 @@
+=Directions for checking out code
+
+<tt>git clone https://github.com/damouse/Glassroom-Server.git</tt>  #clone github repo
+
+<tt>cd Glassroom-Server</tt>           # switch to repo directory
+
+<tt>git pull origin master</tt>  # pulling the code for iteration two
+
+Directions for running app on local (Assumes ruby on rails is installed and in Glassroom-Server directory)
+
+<tt>bundle update</tt>
+
+<tt>bundle install</tt>  # installs the gems we are using
+
+<tt>rails server</tt>    # starts the rails server located at localhost:3000
+
+If the server doesn't start at this point, you have a configuration error. The most likely cause of this is a wrong version of Ruby. Please ensure you are using ruby 2.1.0 (this is most easily accomplished by using RVM.)
+
+Go to <tt>localhost:3000</tt>
+
+App is also accessible on Heroku at http://glassroom.herokuapp.com/
+
+
+In order to run tests, run: <tt>rspec spec/</tt>
+
+=Glassroom Server
+The rails backend. It may get too bulky moving both around, especially if commits get moved around. 
+
+Master contains last stable version.
+
+Development contains new features. Please do not merge with master without consensus.
+
+Do not push unstable builds. Do not work on the develop branch, branch changes and merge into dev.
+
+
+=EC2 Administration Details
+
+As of 4/9 the server is hosted on AWS. The private key required to SSH into the server is called <tt>aws_key.pem</tt> and is located in the root directory of the project. 
+
+Use the following command to SSH into the instance (from root project directory):
+<tt>ssh -2 -i aws_key.pem ubuntu@ec2-54-187-54-83.us-west-2.compute.amazonaws.com</tt>
+
+The site is publically visible at the URL <tt>http://ec2-54-186-197-24.us-west-2.compute.amazonaws.com/</tt>
+
+The live site code is located in <tt>/var/www/Glassroom-Server</tt>. To update the code, pull into the directory using git, then restart nginx with <tt>sudo /etc/init.d/nginx restart</tt> (note: custom initialization script, <tt>service nginx restart</tt> will not work due to passenger integration.)
+
+If you need to change server name, error pages, or other passenger configuration, edit the server block of <tt>/opt/nginx/conf/nginx.conf</tt>.
+
+=Mobile API Documentation
+All mobile API endpoints are located at <tt>/api/[action]</tt>
+
+==To Authenticate a Mobile User:
+GET <tt>/api/login?password=PASSWORD&user_email=EMAIL</tt>
+
+Note: this is insecure. To fix, convert to POST, https the whole site and include the arguments within the payload (sufficient?)
+
+Sample Response:
+{
+  "response": "user logged in",
+  "status": "success",
+  "user": {
+    "id": 2,
+    "name": null,
+    "created_at": "2014-03-03T00:49:31.084Z",
+    "updated_at": "2014-04-20T18:43:34.741Z",
+    "email": "test@test.com",
+    "authentication_token": "CFpsRE9z_ndxtwc3cKs9"
+  }
+}
+
+
+===To Test an Auth Token:
+GET <tt>/api/auth?user_email=EMAIL&user_token=TOKEN</tt>
+
+Response:
+{
+  "response": "accepted auth token",
+  "status": "success"
+}
+
+==To Create a new Lecture"
+POST <tt>/api/create_lecture?user_email=EMAIL</tt>
+
+Currently insecure, will be changed to token instead of email included in the payload using HTTPS
+
+Sample Response:
+{
+  "response": "user logged in",
+  "status": "success",
+  "user": {
+    "id": 2,
+    "name": null,
+    "created_at": "2014-03-03T00:49:31.084Z",
+    "updated_at": "2014-04-20T18:43:34.741Z",
+    "email": "test@test.com",
+    "authentication_token": "CFpsRE9z_ndxtwc3cKs9"
+  }
+}
+
+===To Upload an Image:
+Images must be base64 encoded!
+
+POST <tt>/api/upload_image</tt>
+
+Payload:   
+{
+    "name": "tes1.jpg",
+    "lecture_id": 1,
+    "image_type": "image/jpeg",
+    "image_data":"BINARY DATA"
+}
+
+===To Upload Audio:
+===To Upload Video:
+
+=Miscellanious
+IMPORTANT NOTE: with the addition of paperclip and file-uploading, you MUST have imagemagick installed on whichever system is running the server!
+
+<tt>sudo apt-get install libmagickwand-dev imagemagick</tt>
