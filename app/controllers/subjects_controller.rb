@@ -5,27 +5,18 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = current_user.subjects
+    @subjects = Subject.all
   end
 
   # GET /subjects/1
   # GET /subjects/1.json
-  def show    
-    valid = false
-
-    current_user.subjects.each do |subject|
-      valid = true if subject.id == @subject.id
-    end
-
-    redirect_to invalid_resource_path unless valid
-
+  def show
     @lectures = @subject.lectures
   end
 
   # GET /subjects/new
   def new
     @subject = Subject.new
-
   end
 
   # GET /subjects/1/edit
@@ -36,7 +27,6 @@ class SubjectsController < ApplicationController
   # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
-    @subject.user_id = current_user.id
 
     respond_to do |format|
       if @subject.save
