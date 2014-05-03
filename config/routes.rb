@@ -7,7 +7,7 @@ GlassroomProto::Application.routes.draw do
   get "images/sort_order"
   get "images/update"
   get "images/delete"
-
+  
   devise_for :users
 
   #consolidate these - Mickey
