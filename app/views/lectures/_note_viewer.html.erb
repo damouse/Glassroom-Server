@@ -46,6 +46,8 @@
           var element = $('.note_list').prepend('<%= escape_javascript(render :partial => "lectures/note_update_form", :locals => {:note=> @blank_note})   %>');
           //injects the new values to the update form for this new note
           element.find('#id').first().val(data.id); 
+          element.find('li').first().attr("id", "note_" + data.id);
+          element.find("div.note_name").first().html(data.name);
           element.find("#note_text").first().val(data.text);
           //feed back delete url
           element.find(".destroy_note").first().attr("href", "/notes/delete/" + data.id);
