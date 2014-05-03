@@ -4,22 +4,20 @@
 <div class='lecture-resources-wrapper'>
 
 
-<%= render '/lectures/note_viewer', :media => @notes %>
+	<%= render '/lectures/note_viewer', :media => @notes %>
 
-<h3>Audio:</h3>
-<%= render '/lectures/media_placeholder', :media => @audio %>
+	<h3>Audio:</h3>
+	<%= render '/lectures/media_placeholder', :media => @audio %>
 
-<div class='lecture-resource lec-videos'>
-<h3>Video:</h3>
-<%= render '/lectures/media_placeholder', :media => @video %>
+	<div class='lecture-resource lec-videos'>
+	<h3>Video:</h3>
+	<%= render '/lectures/media_placeholder', :media => @video %>
+	</div>
 
 <div class='lecture-resource lec-images'>
 <h3>Images:</h3>
 <!--%= render '/lectures/media_placeholder', :media => @images %-->
 <%= render '/lectures/image_viewer', :media => @images %>
 
-<<<<<<< HEAD
 </div>
-=======
 </div>
->>>>>>> fbe9d10ce4f130fa240cbb35090b2545292db751

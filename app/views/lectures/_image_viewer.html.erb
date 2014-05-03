@@ -8,8 +8,6 @@
 
       <%= simple_form_for element, url: {controller: "images", action: "update"}, method: "get", :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
 
-      <%= simple_form_for element, :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
-
       <div> 
        <%= image_tag element.source.url%>
      </div>
