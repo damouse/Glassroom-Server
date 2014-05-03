@@ -1,12 +1,13 @@
 
 <div class='image-wrapper'>
-	<ul class='lecture-img' id='lecture-img-sortable'>
+  <ul class='lecture-img' id='lecture-img-sortable'>
     <!--button id='change-img-order'>Update</button-->
 
     <% media.each do |element| %>
     <li id=<%=element.id %>>
 
       <%= simple_form_for element, url: {controller: "images", action: "update"}, method: "get", :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
+
       <div> 
        <%= image_tag element.source.url%>
      </div>
@@ -14,6 +15,7 @@
      <div>Id: <%= element.id %></div>
      <div><%= element.created_at %></div>
      <div>Order: <%= element.order %></div>
+
      <%= hidden_field_tag :id, element.id %>
      <%= f.input :name, input_html: {id: "image-name"} %>
      <%= f.button :submit, :class => 'btn-primary btn btn-mini', :value=>"Update" %>
