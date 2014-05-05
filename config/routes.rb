@@ -17,7 +17,7 @@ GlassroomProto::Application.routes.draw do
   devise_for :users
 
   #consolidate these - Mickey
-  match '/api/auth', to: 'mobile_api#auth', via: 'get'
+  match '/api/auth', to: 'mobile_api#auth', via: 'post'
   match '/api/login', to: 'mobile_api#mobile_login', via: 'get'
   match '/api/upload_image', to: 'mobile_api#upload_image', via: 'post'
   match '/api/create_lecture', to: 'mobile_api#create_lecture', via: 'post'

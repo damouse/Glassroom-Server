@@ -67,7 +67,13 @@ Sample Response:
 }
 
 ===To Test an Auth Token:
-GET <tt>/api/auth?user_email=EMAIL&user_token=TOKEN</tt>
+POST <tt>/api/auth?user_email=EMAIL&user_token=TOKEN</tt>
+
+Sample Body:
+{
+  "user_id": 1,
+  "user_token": "5cpMzSL8XsxhV4WBbSnb"
+}
 
 Response:
 {
