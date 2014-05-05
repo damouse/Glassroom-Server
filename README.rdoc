@@ -50,7 +50,7 @@ If you need to change server name, error pages, or other passenger configuration
 All mobile API endpoints are located at <tt>/api/[action]</tt>
 
 ==To Authenticate a Mobile User:
-GET <tt>/api/login?user_id=2&user_password=12345678</tt>
+GET <tt>/api/login?user_email=test@test.com&user_password=12345678</tt>
 
 Sample Response:
 {

@@ -12,9 +12,8 @@ class MobileApiController < ApplicationController
 	end
 
 	#endpoint for logging in from a mobile app
-	#CURRENTLY INSECURE
 	def mobile_login
-		id = params[:user_id]
+		id = params[:user_email]
 		pass = params[:user_password]
 
 		unless id.present? and pass.present?
@@ -22,7 +21,7 @@ class MobileApiController < ApplicationController
       return
     end
 
-		user = User.find_by_id(id)
+		user = User.find_by_email(id)
 
 		if not user
 			render :json => {response:'user not found', status:'fail'}

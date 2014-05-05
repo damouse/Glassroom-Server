@@ -1,5 +1,7 @@
 GlassroomProto::Application.routes.draw do
 
+  get "mobile_api/auth"
+
   get "notes/create"
   get "notes/update"
   get "notes/change_order"
