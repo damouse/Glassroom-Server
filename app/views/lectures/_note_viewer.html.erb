@@ -22,11 +22,11 @@
   </div>
 <% end %>
  
-<ul class='note_list'>
+<ul class='note_list connectedSortable'>
 
   <% media.each do |note| %>
  
-  <li class='note_<%= note.id%>'>
+  <li class='note_<%= note.id%>' id = 'note'>
     <div class='note_name'>
       <%= note.name %>
     </div>
