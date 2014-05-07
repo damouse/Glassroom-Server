@@ -21,7 +21,7 @@ class ImagesController < ApplicationController
 
   def check_incoming
     currMaxId = params[:maxImageId]
-    @images = Image.where("id > ?", currMaxId.to_i)
+    @images = Image.where("id > ?", currMaxId.to_i).order("id ASC")
     respond_with @images
   end
 
