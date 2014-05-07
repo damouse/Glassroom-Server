@@ -1,6 +1,5 @@
 class ImagesController < ApplicationController
- 
-
+  respond_to :html, :json
   def edit
   end
 
@@ -16,6 +15,14 @@ class ImagesController < ApplicationController
       @image.update_attribute(:order, curr_order)
       curr_order = curr_order + 1
     end
+  end
+
+  
+
+  def check_incoming
+    currMaxId = params[:maxImageId]
+    @images = Image.where("id > ?", currMaxId.to_i)
+    respond_with @images
   end
 
   def sort_order
