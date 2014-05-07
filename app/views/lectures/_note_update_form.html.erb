@@ -7,7 +7,7 @@
     </div>
     <%= form_for note, remote: true, url: {controller: "notes", action: "update"}, method: "get", html: { :class => 'form-horizontal edit_note_form' } do |f| %>
     <%= hidden_field_tag :id, note.id %>
-    <%= f.text_field :text, :value=>note.text %>
+    <%= f.text_area :text, :value=>note.text %>
 
     <%=f.submit :class=>"btn btn-mini btn-primary", :value=>"Update"%>
 

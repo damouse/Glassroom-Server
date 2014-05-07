@@ -10,7 +10,7 @@
   <!--%= f.association :lecture %-->
   <%= f.input :name, :input_html=>{ :class => 'new_note_name'}%>
   <!--%= render '/lectures/editor_toolbar'%-->
-  <%= f.input :text, :input_html=>{ :class => 'new_note_body' } %>
+  <%= f.input :text, as: :text, :input_html=>{ :class => 'new_note_body'} %>
 
   <div class="form-actions">
 
@@ -32,7 +32,7 @@
     </div>
     <%= form_for note, remote: true, url: {controller: "notes", action: "update"}, method: "get", html: { :class => 'form-horizontal edit_note_form' } do |f| %>
     <%= hidden_field_tag :id, note.id %>
-    <%= f.text_field :text, :value=>note.text %>
+    <%= f.text_area :text, :value=>note.text %>
 
     <%=f.submit :class=>"btn btn-mini btn-primary", :value=>"Update"%>
 
