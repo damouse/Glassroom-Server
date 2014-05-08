@@ -9,6 +9,10 @@ class LecturesController < ApplicationController
   	@audio = @lecture.audios
   	@video = @lecture.videos 
   end
+
+  def lecture_viewer_two
+    
+  end
  
   def most_recent_note
   end
