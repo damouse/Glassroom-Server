@@ -44,6 +44,25 @@ class NotesController < ApplicationController
     render nothing: true
   end
 
+  def newest_image 
+    url = params['url']
+    split = url.split "/"
+    id = split[split.length-1]
+
+    lecture = Lecture.find_by_id(id)
+    images = lecture.images
+
+    max = 0
+    images.each do |image|
+      if image.id > max
+        max = image.id
+      end
+    end
+
+    image = Image.find_by_id(max)
+    respond_with image
+  end
+
   def delete
     args = params['id']
     split = args.split "_"
