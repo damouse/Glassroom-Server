@@ -81,7 +81,30 @@ class MobileApiController < ApplicationController
   #check to make sure the auth token is accepted. 
   def ensure_logged_in
     if not user_signed_in?
+      render :json => {response:'   
+    data = StringIO.new(Base64.decode64(json["image_data"]))
+    data.class.class_eval { attr_accessor :original_filename, :content_type }
+    data.original_filename = json["name"]
+    data.content_type = json["image_type"]
+
+    image.source = data
+
+    if image.save
+      render :json => {status: 'success', new_image:image}
+    else
+      render :json => {status: 'failure', errors:image.errors.full_messages}
+    end
+  end
+
+
+  private
+  #check to make sure the auth token is accepted. 
+  def ensure_logged_in
+    if not user_signed_in?
       render :json => {response:'auth token not accepted', status:'fail'}
+      return false
+    end
+auth token not accepted', status:'fail'}
       return false
     end
 
