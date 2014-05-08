@@ -37,12 +37,14 @@
 
           console.log(response);
           var newImgArrLength = response.length;
-          if(newImgArrLength > 0){
-            maxImageId = (response[newImgArrLength - 1]).id;
-          }
+          
           
           for(var i = 0; i < newImgArrLength; i++){
+            
             newImgJson = response[i];
+            if(newImgJson.id > maxImageId){
+                maxImageId = newImgJson.id;
+              }
             var newImg = $('.lecture-img').append('<%= escape_javascript(render :partial => "lectures/image_form", :locals => {:image=> @blank_image})   %>');
             //injects the new values to the update form for this new note
               newImg.find('#id').last().val(newImgJson.id); 
