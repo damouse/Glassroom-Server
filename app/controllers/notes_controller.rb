@@ -6,11 +6,12 @@ class NotesController < ApplicationController
   end
   
   def create
-    @note = Note.new note_params
-    @note.save
-    respond_with @note
-  end
+    url = params['url']
+    id = url[-1, 1]
 
+    @note = Note.create(lecture_id:id, text:' ')
+    respond_with @note.id
+  end
 
   def update
   	params['contents'].each do |key, val|
@@ -18,6 +19,7 @@ class NotesController < ApplicationController
       note = Note.find_by_id(split[1])
       note.update_attributes(text:val)
     end
+
     render nothing: true
   end
 

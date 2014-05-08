@@ -14,6 +14,9 @@ class LecturesController < ApplicationController
     @lecture = Lecture.find(params[:id])
     @elements = @lecture.notes + @lecture.images
 
+    #remove duplicates when order and text are the same
+    @elements.uniq!
+
     #check to make sure the notes have been given an order, else order them after
     #the existing ones
     largest = 0
@@ -22,7 +25,7 @@ class LecturesController < ApplicationController
 
     @elements.each do |element|
       if element.order == nil
-        unordered.push(note)
+        unordered.push(element)
       elsif element.order > largest
         largest = element.order
       end
@@ -32,6 +35,8 @@ class LecturesController < ApplicationController
       largest += 1
       element.update_attributes(order:largest)
     end
+
+
 
     @elements.sort_by! do |element|
       element.order
