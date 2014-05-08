@@ -30,6 +30,13 @@
   }
 }
 
+#text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height:100%;
+  min-height:50px;
+}
+
 #sortable li {
   margin: 0 5px 5px 5px;
   padding: 10px 20px 5px 20px;
@@ -40,5 +47,24 @@
   width: 100%;
 }
 
+#new-note {
+  margin: 0 5px 5px 5px;
+  padding: 10px 20px 5px 20px;
+  border:1px solid gray;
+  font-size: 12px;
+  height: 100%;
+  min-height:100px;
+  background-color: white;
+  width: 100%;
+
+  border-style:solid;
+  border-width:1px;
+  border-radius:5px;
+  border-color: #A6A6A6;
+  width: 100%;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 
