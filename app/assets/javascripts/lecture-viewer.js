@@ -81,8 +81,8 @@ function deleteNote(id) {
 	console.log(id)
 	var list = document.getElementById('sortable')
 	var child = document.getElementById(id)
-	
-	child.hide('slow', function(){ child.remove(); });
+	list.removeChild(child)
+
 
 	$.ajax({
         url: '/notes/delete',
@@ -94,31 +94,6 @@ function deleteNote(id) {
         }
      });
 }
-
-$(function(){
-   $("#create_new_note_form").on("ajax:success", function(event, data){
-    event.preventDefault();
-      console.log("note create succ", data.text, data.name);
-      //Clear out create form fields, so that user knows it's done and 
-      //ready to be used for creating another new note
-     $(".new_note_name").val('');
-    $(".new_note_body").val('');
-      //display the newly create note at top of the list
-      var element = $('.note_list').prepend('<%= escape_javascript(render :partial => "lectures/note_update_form", :locals => {:note=> @blank_note})   %>');
-      //injects the new values to the update form for this new note
-      element.find('#id').first().val(data.id); 
-
-
-      element.find('li').first().attr("id", "note_" + data.id);
-      element.find("div.note_name").first().html(data.name);
-
-      element.find("#note_text").first().val(data.text);
-      //feed back delete url
-      element.find(".destroy_note").first().attr("href", "/notes/delete/" + data.id);
-   });
-    
-});
-
 
 function update() {
 	var list = $('#sortable')[0].children
