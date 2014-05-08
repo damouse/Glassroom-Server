@@ -3,7 +3,6 @@ GlassroomProto::Application.routes.draw do
   get "mobile_api/auth"
 
   get "notes/create"
-  get "notes/delete/:id", to: "notes#delete", as: "notes_delete"
 
   get "images/change_order"
   get "images/edit"
@@ -16,6 +15,7 @@ GlassroomProto::Application.routes.draw do
   #new notes routes
   match 'notes/change_order', to: 'notes#change_order', via: 'post'
   match 'notes/update', to: 'notes#update', via: 'post'
+  get 'notes/delete'
 
 
   devise_for :users

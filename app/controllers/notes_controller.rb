@@ -7,7 +7,8 @@ class NotesController < ApplicationController
   
   def create
     url = params['url']
-    id = url[-1, 1]
+    split = url.split "/"
+    id = split[split.length-1]
 
     @note = Note.create(lecture_id:id, text:' ')
     respond_with @note.id
@@ -20,7 +21,7 @@ class NotesController < ApplicationController
       note.update_attributes(text:val)
     end
 
-    render nothing: true
+    render json: {}
   end
 
   def change_order
@@ -48,9 +49,19 @@ class NotesController < ApplicationController
   end
 
   def delete
-    @note = Note.find(params[:id])
-    @note.destroy
-    redirect_to(:back)
+    args = params['id']
+    split = args.split "_"
+    id = split[1]
+
+    if (split[0] == "Note")
+      note = Note.find_by_id(id)
+      note.destroy
+    else
+      image = Image.find_by_id(id)
+      image.destroy()
+    end
+    
+    render nothing: true
   end
 
   private

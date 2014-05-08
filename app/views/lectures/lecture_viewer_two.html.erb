@@ -1,7 +1,7 @@
 <h1>Lecture: <%= @lecture.name%></h1>
 
 
-</div>
+
 <div class='lecture-resources-wrapper'>
 <!-- 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -20,12 +20,15 @@
 					 <div class="image-wrapper"><%= image_tag element.source.url%> </div>
 				  <% end %>
 
+          <%= button_to_function "Delete", "deleteNote('#{id}')", :class => "btn" %>
+
 			</li>
 
-		<% end %>
-</ul>
+  		<% end %>
+  </ul>
 
 </div>
+
 <div id="centering">
 <%= button_to_function "Add Note", 'addNote()', :class => "btn btn-success btn-add" %>
 </div>

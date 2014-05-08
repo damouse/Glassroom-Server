@@ -77,6 +77,24 @@ function addNote() {
      });
 }
 
+function deleteNote(id) {
+	console.log(id)
+	var list = document.getElementById('sortable')
+	var child = document.getElementById(id)
+	
+	child.hide('slow', function(){ child.remove(); });
+
+	$.ajax({
+        url: '/notes/delete',
+        type: 'get',
+        data: {'id':id},
+        dataType: 'script',
+        complete: function(data){
+        	console.log('Removed node')
+        }
+     });
+}
+
 $(function(){
    $("#create_new_note_form").on("ajax:success", function(event, data){
     event.preventDefault();
