@@ -14,9 +14,6 @@ class LecturesController < ApplicationController
     @lecture = Lecture.find(params[:id])
     @elements = @lecture.notes + @lecture.images
 
-    #remove duplicates when order and text are the same
-    @elements.uniq!
-
     #check to make sure the notes have been given an order, else order them after
     #the existing ones
     largest = 0
@@ -36,35 +33,8 @@ class LecturesController < ApplicationController
       element.update_attributes(order:largest)
     end
 
-
-
     @elements.sort_by! do |element|
       element.order
     end
   end
- 
-  def most_recent_note
-  end
-
-  #media creation methods, only accessible through API (excepting note)
-  def create_note
-
-  end
-
-  def create_audio
-
-  end
-
-  def create_video
-
-  end
-
-  def create_image
-
-  end
-  private
-    def note_params
-      params.fetch(:note, {}).permit(:text, :name, :lecture_id)
-       #params.require(:note).permit(:text)
-    end
 end

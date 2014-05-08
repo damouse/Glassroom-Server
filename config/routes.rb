@@ -16,6 +16,7 @@ GlassroomProto::Application.routes.draw do
   match 'notes/change_order', to: 'notes#change_order', via: 'post'
   match 'notes/update', to: 'notes#update', via: 'post'
   get 'notes/delete'
+  get "notes/newest_image"
 
 
   devise_for :users
