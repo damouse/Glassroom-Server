@@ -4,6 +4,7 @@ class LecturesController < ApplicationController
     @new_note = Note.new(note_params)
   	@notes = @lecture.notes.order("created_at DESC")
     @blank_note = Note.new
+    @blank_image = Image.new
   	@images = (@lecture.images).order(:order)
   	@audio = @lecture.audios
   	@video = @lecture.videos 

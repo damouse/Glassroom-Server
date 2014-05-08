@@ -10,4 +10,11 @@ class Image < ActiveRecord::Base
     :path => ":rails_root/public/:attachment/:id/:style/:basename.:extension"
 
   	validates_attachment_content_type :source, :content_type => /\Aimage\/.*\Z/
+
+
+
+
+  	def as_json(options={})
+    	super.as_json(options).merge({:img_url => source.url})
+  	end
 end

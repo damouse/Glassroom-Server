@@ -1,5 +1,9 @@
 //= require jquery-ui
   $(function() {
+    $(".note_list, #lecture-img-sortable").sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+
     $( "#lecture-img-sortable" ).sortable({
     	update: function (event, ui) {
  
@@ -17,6 +21,9 @@
         }
     });
     $( "#lecture-img-sortable" ).disableSelection();
+
+
+    
 
 
   });
@@ -42,8 +49,4 @@
 
     });
   });
-<<<<<<< HEAD
 */
-=======
-*/
->>>>>>> fbe9d10ce4f130fa240cbb35090b2545292db751
