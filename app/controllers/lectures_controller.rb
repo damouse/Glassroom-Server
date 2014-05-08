@@ -11,7 +11,27 @@ class LecturesController < ApplicationController
   end
 
   def lecture_viewer_two
-    
+    lecture = Lecture.find(params[:id])
+    @elements = lecture.notes + lecture.images
+
+    #check to make sure the notes have been given an order, else order them after
+    #the existing ones
+    largest = 0
+
+    unordered = Array.new()
+
+    @elements.each do |element|
+      if element.order == nil
+        unordered.push(note)
+      elsif element.order > largest
+        largest = element.order
+      end
+    end
+
+    unordered.each do |element|
+      largest++
+      element.update_attributes(order:largest)
+    end
   end
  
   def most_recent_note

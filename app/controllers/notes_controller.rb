@@ -18,6 +18,8 @@ class NotesController < ApplicationController
   end
 
   def change_order
+    puts params
+    render json: {}
   end
 
   def delete

@@ -4,7 +4,6 @@ GlassroomProto::Application.routes.draw do
 
   get "notes/create"
   get "notes/update"
-  get "notes/change_order"
   get "notes/delete/:id", to: "notes#delete", as: "notes_delete"
 
   get "images/change_order"
@@ -14,6 +13,11 @@ GlassroomProto::Application.routes.draw do
   get "images/update"
   get "images/delete/:id", to: "images#delete", as: "images_delete"
   get "images/check_incoming"
+
+  #new notes routes
+  match 'notes/change_order', to: 'notes#change_order', via: 'post'
+
+
   devise_for :users
 
   #consolidate these - Mickey

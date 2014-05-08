@@ -3,16 +3,16 @@
   padding: 10px
 }
 
-.note {
+.sortable-wrapper {
   border-style:solid;
   border-width:1px;
   border-radius:5px;
   border-color: #A6A6A6;
+  width: 100%;
 
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
 
 #sortable {
   list-style-type: none;
@@ -22,23 +22,23 @@
   width: 100%;
 }
 
+.image-wrapper {
+  overflow: hidden;
+
+  img {
+    width: 100%
+  }
+}
+
 #sortable li {
-  margin: 0 3px 3px 3px;
+  margin: 0 5px 5px 5px;
   padding: 10px 20px 5px 20px;
   border:1px solid gray;
   font-size: 12px;
-  height: 38px;
+  height: 100%;
   background-color: white;
-  font-family: monospace;
-  width: 400px;
+  width: 100%;
 }
 
-#sortable li span:nth-child(1){
-  position: absolute;
-  margin-left: -1.3em;
-  color:red;
-}
 
-#sortable li span:nth-child(2){
-  
-}
+
