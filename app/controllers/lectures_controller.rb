@@ -11,8 +11,8 @@ class LecturesController < ApplicationController
   end
 
   def lecture_viewer_two
-    lecture = Lecture.find(params[:id])
-    @elements = lecture.notes + lecture.images
+    @lecture = Lecture.find(params[:id])
+    @elements = @lecture.notes + @lecture.images
 
     #check to make sure the notes have been given an order, else order them after
     #the existing ones

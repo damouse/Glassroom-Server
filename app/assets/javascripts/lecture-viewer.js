@@ -12,6 +12,9 @@ $(document).ready(function(){
     	update()
 	});
 
+	$("#new-note").on("newword:composer", function() {
+	  console.log('newline')
+	})
 
 	$('#sortable').sortable({
 		axis: 'y',
@@ -42,6 +45,8 @@ $(document).ready(function(){
 		}
 	});
 });
+
+
 
 function update() {
 	var list = $('#sortable')[0].children
