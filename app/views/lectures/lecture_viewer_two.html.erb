@@ -12,7 +12,7 @@
       <% id = element.class.to_s << '_' << element.id.to_s %> 
 
 			<li class="sortable-wrapper" id=<%=id%>>
-			   <span class="handle">[drag]</span>
+			   <span class="handle"><i class="fa fa-bars"> </i></span>
 				
 					<% if element.instance_of?(Note) %>
 					 <div class="ce" id="text" contenteditable="true"><%= element.text.html_safe %></div>
