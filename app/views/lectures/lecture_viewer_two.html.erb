@@ -1,0 +1,34 @@
+<h1>Lecture: <%= @lecture.name%></h1>
+
+
+
+<div class='lecture-resources-wrapper'>
+<!-- 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> -->
+
+	<ul id="sortable">
+		<% @elements.each do |element|%>
+      <% id = element.class.to_s << '_' << element.id.to_s %> 
+
+			<li class="sortable-wrapper" id=<%=id%>>
+			   <span class="handle">[drag]</span>
+				
+					<% if element.instance_of?(Note) %>
+					 <div class="ce" id="text" contenteditable="true"><%= element.text %></div>
+				  <% else %>
+					 <div class="image-wrapper"><%= image_tag element.source.url%> </div>
+				  <% end %>
+
+          <%= button_to_function "Delete", "deleteNote('#{id}')", :class => "btn" %>
+
+			</li>
+
+  		<% end %>
+  </ul>
+
+</div>
+
+<div id="centering">
+<%= button_to_function "Add Note", 'addNote()', :class => "btn btn-success btn-add" %>
+</div>
