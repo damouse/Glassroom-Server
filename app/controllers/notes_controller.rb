@@ -18,8 +18,27 @@ class NotesController < ApplicationController
   end
 
   def change_order
-    puts params
-    render json: {}
+    list = params['order']
+    count = 0
+
+    #reorder the elements
+    list.each do |element|
+      split = element.split "_"
+
+      if (split[0] == "Note")
+        note = Note.find_by_id(split[1])
+        note.update_attributes(order:count)
+        puts 'Note with id ' + note.id.to_s + ' order ' + note.order.to_s
+      else
+        image = Image.find_by_id(split[1])
+        image.update_attributes(order:count)
+      end
+      
+      count += 1
+    end
+
+    puts list
+    render nothing: true
   end
 
   def delete

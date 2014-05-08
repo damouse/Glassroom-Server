@@ -1,5 +1,6 @@
 $(function() {
   $( "#sortable" ).sortable({cancel : '.ce'});
+    
     $( ".ce" ).attr("contentEditable",true);
   });
 
@@ -15,11 +16,18 @@ $(document).ready(function(){
 		scroll: true,
 
 		update: function(){
+			var list = $('#sortable')[0].children
+			var ret = new Array(list.length)
 
+			for (var i = 0; i < list.length; i++) {
+				ret[i] = list[i].id
+			}
+
+			console.log(ret)
 			$.ajax({
 		        url: '/notes/change_order',
 		        type: 'post',
-		        data: $('#sortable')[0].children,
+		        data: {'order': ret},
 		        dataType: 'script',
 		        complete: function(request){
 		          $('#sortable').effect('highlight');

@@ -29,8 +29,12 @@ class LecturesController < ApplicationController
     end
 
     unordered.each do |element|
-      largest++
+      largest += 1
       element.update_attributes(order:largest)
+    end
+
+    @elements.sort_by! do |element|
+      element.order
     end
   end
  
