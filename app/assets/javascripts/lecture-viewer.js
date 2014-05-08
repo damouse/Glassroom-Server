@@ -81,7 +81,6 @@ setInterval(function(){
         dataType: 'script',
         complete: function(data){
         	var obj = JSON.parse(data.responseText)
-        	console.log(data.responseText)
 
         	var found = false
         	var largest = 0
@@ -101,7 +100,6 @@ setInterval(function(){
 		   		found = true
 		   }
 
-			console.log("found? " + found + ' id: ' + obj['id'])
 			if (found == true) {
 				var list = document.getElementById('sortable');
 
@@ -148,7 +146,7 @@ function deleteNote(id) {
         }
      });
 }
-
+	
 function update() {
 	var list = $('#sortable')[0].children
 	var ret = {}
