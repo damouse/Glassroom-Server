@@ -1,9 +1,5 @@
 class NotesController < ApplicationController
   respond_to :json, :html
-
-  def new
-    @note = Note.new
-  end
   
   def create
     url = params['url']
@@ -63,10 +59,4 @@ class NotesController < ApplicationController
     
     render nothing: true
   end
-
-  private
-    def note_params
-    	params.fetch(:note, {}).permit(:text, :name, :lecture_id)
-       #params.require(:note).permit(:text)
-   	end
 end
