@@ -3,6 +3,7 @@ $(function() {
   $( "#sortable" ).sortable({cancel : '.ce'});
   });
 
+
 $(document).ready(function(){	
 	$(".ce").focus(function(eventObject){
 		update()
@@ -69,3 +70,4 @@ function update() {
         }
      });
 }
+
