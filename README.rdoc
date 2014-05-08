@@ -87,7 +87,7 @@ POST <tt>/api/create_lecture</tt>
 Sample Body:
 {
   "user_id": 2,
-  "user_token": "CFpsRE9z_ndxtwc3cKs9"
+  "user_token": "RcxtzLtJhyxTPwWRHgik"
 }
 
 Sample Response:
