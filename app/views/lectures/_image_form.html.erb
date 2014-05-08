@@ -1,0 +1,19 @@
+<!--Used for Image polling from glass-->
+
+
+<li id=<%=image.id %>>
+      <%= simple_form_for image, url: {controller: "images", action: "update"}, method: "get", :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
+     <div class='img_source_url'> 
+       <%= image_tag image.source.url%>
+     </div>
+     <div class='img_name'><%= image.name %></div>
+     <div class='img_id'>Id: <%= image.id %></div>
+     <div class='img_created_at'><%= image.created_at %></div>
+     <div class='img_order'>Order: <%= image.order %></div>
+     <%= hidden_field_tag :id, image.id %>
+     <%= f.input :name, input_html: {id: "image-name"} %>
+     <%= f.button :submit, :class => 'btn-primary btn btn-mini', :value=>"Update" %>
+    <% end %>
+  <div> <%= link_to 'Delete', images_delete_path(id: 0), :class => 'btn btn-mini btn-danger destroy_image', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))} %>
+  </div>
+</li>

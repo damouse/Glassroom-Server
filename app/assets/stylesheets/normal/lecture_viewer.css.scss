@@ -1,0 +1,81 @@
+.lecture-resources-wrapper {
+	background-color: #F0F0F0;
+  padding: 30px;
+  width: 100%;
+  padding: 15px 15px;
+}
+
+.sortable-wrapper {
+  border-style:solid;
+  border-width:1px;
+  border-radius:5px;
+  border-color: #A6A6A6;
+  width: 100%;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#sortable {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.image-wrapper {
+  overflow: hidden;
+
+  img {
+    width: 100%
+  }
+}
+
+#text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height:100%;
+  min-height:50px;
+}
+
+#sortable li {
+  margin: 0 5px 5px 5px;
+  padding: 10px 20px 5px 20px;
+  border:1px solid gray;
+  font-size: 12px;
+  height: 100%;
+  background-color: white;
+  width: 100%;
+}
+
+#new-note {
+  margin: 0 5px 5px 5px;
+  padding: 10px 20px 5px 20px;
+  border:1px solid gray;
+  font-size: 12px;
+  height: 100%;
+  min-height:100px;
+  background-color: white;
+  width: 100%;
+
+  border-style:solid;
+  border-width:1px;
+  border-radius:5px;
+  border-color: #A6A6A6;
+  width: 100%;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-add {
+  width: 200px;
+  margin: 0 auto;
+}
+
+#centering {
+  margin: 40px;
+ width: 100%;
+  text-align: center;
+}

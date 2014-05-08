@@ -44,7 +44,7 @@ $(function(){
   */
 
   
+$(".note_list").sortable();
 
-
-
+$(".note_list").disableSelection();
 });
