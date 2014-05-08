@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140508083655) do
     t.integer  "lecture_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
     t.integer  "order",               default: 0
     t.string   "source_file_name"
     t.string   "source_content_type"
