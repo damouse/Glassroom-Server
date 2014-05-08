@@ -13,8 +13,12 @@ class NotesController < ApplicationController
 
 
   def update
-  	@note = Note.find(params[:id])
-  	@note.update(note_params)
+  	params['contents'].each do |key, val|
+      split = key.split "_"
+      note = Note.find_by_id(split[1])
+      note.update_attributes(text:val)
+    end
+    render nothing: true
   end
 
   def change_order

@@ -1,10 +1,17 @@
+
 $(function() {
   $( "#sortable" ).sortable({cancel : '.ce'});
-    
-    $( ".ce" ).attr("contentEditable",true);
   });
 
 $(document).ready(function(){	
+	$(".ce").focus(function(eventObject){
+		update()
+	});
+
+	$(".ce").blur(function(eventObject){
+    	update()
+	});
+
 
 	$('#sortable').sortable({
 		axis: 'y',
@@ -23,7 +30,6 @@ $(document).ready(function(){
 				ret[i] = list[i].id
 			}
 
-			console.log(ret)
 			$.ajax({
 		        url: '/notes/change_order',
 		        type: 'post',
@@ -36,3 +42,25 @@ $(document).ready(function(){
 		}
 	});
 });
+
+function update() {
+	var list = $('#sortable')[0].children
+	var ret = {}
+
+	for (var i = 0; i < list.length; i++) {
+		var name = list[i].id
+		if (name.indexOf("Note") > -1){
+	        ret[name] = list[i].children[1].innerHTML
+	    }
+	}
+
+	$.ajax({
+        url: '/notes/update',
+        type: 'post',
+        data: {'contents': ret},
+        dataType: 'script',
+        complete: function(request){
+          $('#sortable').effect('highlight');
+        }
+     });
+}

@@ -8,17 +8,22 @@
 
 	<ul id="sortable">
 		<% @elements.each do |element|%>
-			<li class="sortable-wrapper" id="<%=element.class%>_<%=element.id%>">
-			<span class="handle">[drag]</span>
-				<div class="ce">
+      <% id = element.class.to_s << '_' << element.id.to_s %> 
+
+			<li class="sortable-wrapper" id=<%=id%>>
+			   <span class="handle">[drag]</span>
+				
 					<% if element.instance_of?(Note) %>
-					 <%= element.text %>
+					 <div class="ce" id="text" contenteditable="true"><%= element.text %></div>
 				  <% else %>
 					 <div class="image-wrapper"><%= image_tag element.source.url%> </div>
-				<% end %>
-				</div>
-        
+				  <% end %>
+
 			</li>
+
 		<% end %>
 	</ul>
+
+  <h2>Events:</h2>
+<div id="log"></div>
 </div>
