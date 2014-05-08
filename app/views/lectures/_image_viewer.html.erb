@@ -3,7 +3,7 @@
   <ul class='lecture-img connectedSortable' id='lecture-img-sortable'>
     <!--button id='change-img-order'>Update</button-->
     <% media.each do |element| %>
-    <li id=<%=element.id %>>
+    <!--li id=<%=element.id %>>
       <%= simple_form_for element, url: {controller: "images", action: "update"}, method: "get", :html => { :class => 'form-horizontal' }, :remote => true  do |f| %>
      <div class='img_source_url'> 
        <%= image_tag element.source.url%>
@@ -18,14 +18,15 @@
     <% end %>
   <div> <%= link_to 'Delete', images_delete_path(id: element.id), :class => 'btn btn-mini btn-danger destroy_image', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))} %>
   </div>
-</li>
+</li-->
 <% end %>
 </ul>
 </div>
 <script type="text/javascript">
-  var maxImageId = Image.maximum("id");
- // var maxImageId = 17;
+  //var maxImageId = Image.maximum("id");
+  var maxImageId = 0;
   $(function(){
+
     var refreshImages = setInterval(function(){
       $.ajax({
         url: "/images/check_incoming.json",
@@ -36,12 +37,14 @@
 
           console.log(response);
           var newImgArrLength = response.length;
-          if(newImgArrLength > 0){
-            maxImageId = (response[newImgArrLength - 1]).id;
-          }
+          
           
           for(var i = 0; i < newImgArrLength; i++){
+            
             newImgJson = response[i];
+            if(newImgJson.id > maxImageId){
+                maxImageId = newImgJson.id;
+              }
             var newImg = $('.lecture-img').append('<%= escape_javascript(render :partial => "lectures/image_form", :locals => {:image=> @blank_image})   %>');
             //injects the new values to the update form for this new note
               newImg.find('#id').last().val(newImgJson.id); 
