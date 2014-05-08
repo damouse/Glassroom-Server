@@ -47,7 +47,9 @@ $(document).ready(function(){
 	});
 });
 
-
+function addNote() {
+	console.log('add')
+}
 
 function update() {
 	var list = $('#sortable')[0].children
