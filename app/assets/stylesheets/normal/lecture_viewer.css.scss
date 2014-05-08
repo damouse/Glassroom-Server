@@ -12,3 +12,33 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+
+#sortable {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#sortable li {
+  margin: 0 3px 3px 3px;
+  padding: 10px 20px 5px 20px;
+  border:1px solid gray;
+  font-size: 12px;
+  height: 38px;
+  background-color: white;
+  font-family: monospace;
+  width: 400px;
+}
+
+#sortable li span:nth-child(1){
+  position: absolute;
+  margin-left: -1.3em;
+  color:red;
+}
+
+#sortable li span:nth-child(2){
+  
+}
